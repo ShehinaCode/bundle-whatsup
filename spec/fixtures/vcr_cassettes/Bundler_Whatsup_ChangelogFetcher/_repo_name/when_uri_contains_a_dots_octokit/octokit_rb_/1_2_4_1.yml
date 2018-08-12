@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/octokit/octokit.rb/contents//
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 12 Sep 2018 08:29:37 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Status:
+      - 302 Found
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '53'
+      X-Ratelimit-Reset:
+      - '1536744573'
+      Location:
+      - https://api.github.com/repositories/417862/contents/
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.028831'
+      X-Github-Request-Id:
+      - DD6A:64B3:949168:16343C2:5B98CE71
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 12 Sep 2018 08:29:38 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repositories/417862/contents/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 12 Sep 2018 08:29:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '52'
+      X-Ratelimit-Reset:
+      - '1536744573'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept
+      Etag:
+      - W/"bb1bb539158db0c0671f2619b3248aa8c7e392a2"
+      Last-Modified:
+      - Tue, 11 Sep 2018 19:12:44 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.033040'
+      X-Github-Request-Id:
+      - DD6C:64B5:DB6473:1E33B79:5B98CE72
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":".document","path":".document","sha":"0ad1bde480e843a9d60fb4ac93727ebc3c728e77","size":53,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.document?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.document","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/0ad1bde480e843a9d60fb4ac93727ebc3c728e77","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.document","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.document?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/0ad1bde480e843a9d60fb4ac93727ebc3c728e77","html":"https://github.com/octokit/octokit.rb/blob/master/.document"}},{"name":".gemtest","path":".gemtest","sha":"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391","size":0,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.gemtest?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.gemtest","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.gemtest","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.gemtest?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391","html":"https://github.com/octokit/octokit.rb/blob/master/.gemtest"}},{"name":".gitignore","path":".gitignore","sha":"c76d09b4c2c698ed7de7c2b6fdfdfeb54a1d8ac0","size":220,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.gitignore?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.gitignore","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/c76d09b4c2c698ed7de7c2b6fdfdfeb54a1d8ac0","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.gitignore","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.gitignore?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/c76d09b4c2c698ed7de7c2b6fdfdfeb54a1d8ac0","html":"https://github.com/octokit/octokit.rb/blob/master/.gitignore"}},{"name":".rspec","path":".rspec","sha":"09127182c759ae50d1ebf397bf072a9ff0820cf6","size":23,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.rspec?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.rspec","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/09127182c759ae50d1ebf397bf072a9ff0820cf6","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.rspec","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.rspec?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/09127182c759ae50d1ebf397bf072a9ff0820cf6","html":"https://github.com/octokit/octokit.rb/blob/master/.rspec"}},{"name":".travis.yml","path":".travis.yml","sha":"af25912aad0cce1a67731b7d82dc234488b88f0c","size":624,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.travis.yml?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.travis.yml","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/af25912aad0cce1a67731b7d82dc234488b88f0c","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.travis.yml","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.travis.yml?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/af25912aad0cce1a67731b7d82dc234488b88f0c","html":"https://github.com/octokit/octokit.rb/blob/master/.travis.yml"}},{"name":".yardopts","path":".yardopts","sha":"10d5a25a7c64ef5b9bf348d612ea2f50b1bf3196","size":171,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/.yardopts?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/.yardopts","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/10d5a25a7c64ef5b9bf348d612ea2f50b1bf3196","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/.yardopts","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/.yardopts?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/10d5a25a7c64ef5b9bf348d612ea2f50b1bf3196","html":"https://github.com/octokit/octokit.rb/blob/master/.yardopts"}},{"name":"CONTRIBUTING.md","path":"CONTRIBUTING.md","sha":"533d9ec19815748162cf3303851302b4a3122445","size":1076,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/CONTRIBUTING.md?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/CONTRIBUTING.md","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/533d9ec19815748162cf3303851302b4a3122445","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/CONTRIBUTING.md","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/CONTRIBUTING.md?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/533d9ec19815748162cf3303851302b4a3122445","html":"https://github.com/octokit/octokit.rb/blob/master/CONTRIBUTING.md"}},{"name":"Gemfile","path":"Gemfile","sha":"47e0b214a274bfc7e3eeac82a6b8c4df0b8ea3e6","size":755,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/Gemfile?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/Gemfile","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/47e0b214a274bfc7e3eeac82a6b8c4df0b8ea3e6","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/Gemfile","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/Gemfile?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/47e0b214a274bfc7e3eeac82a6b8c4df0b8ea3e6","html":"https://github.com/octokit/octokit.rb/blob/master/Gemfile"}},{"name":"Guardfile","path":"Guardfile","sha":"449d4de4daa005bbd8f65cbf315c606cbcf95c51","size":183,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/Guardfile?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/Guardfile","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/449d4de4daa005bbd8f65cbf315c606cbcf95c51","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/Guardfile","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/Guardfile?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/449d4de4daa005bbd8f65cbf315c606cbcf95c51","html":"https://github.com/octokit/octokit.rb/blob/master/Guardfile"}},{"name":"LICENSE.md","path":"LICENSE.md","sha":"f1983312863290c26cfbae2b32f3572504fd9bc9","size":1100,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/LICENSE.md?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/LICENSE.md","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/f1983312863290c26cfbae2b32f3572504fd9bc9","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/LICENSE.md","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/LICENSE.md?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/f1983312863290c26cfbae2b32f3572504fd9bc9","html":"https://github.com/octokit/octokit.rb/blob/master/LICENSE.md"}},{"name":"README.md","path":"README.md","sha":"37a5c9f163bbb3ed88250f9c707a9fabd2c18134","size":26759,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/README.md?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/README.md","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/37a5c9f163bbb3ed88250f9c707a9fabd2c18134","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/README.md","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/README.md?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/37a5c9f163bbb3ed88250f9c707a9fabd2c18134","html":"https://github.com/octokit/octokit.rb/blob/master/README.md"}},{"name":"RELEASE.md","path":"RELEASE.md","sha":"0503947d1291a0882ecabfc0306fa18abdb4f3c0","size":1279,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/RELEASE.md?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/RELEASE.md","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/0503947d1291a0882ecabfc0306fa18abdb4f3c0","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/RELEASE.md","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/RELEASE.md?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/0503947d1291a0882ecabfc0306fa18abdb4f3c0","html":"https://github.com/octokit/octokit.rb/blob/master/RELEASE.md"}},{"name":"Rakefile","path":"Rakefile","sha":"fccd9d2260bea0a637973f62abcf6c776250348b","size":447,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/Rakefile?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/Rakefile","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/fccd9d2260bea0a637973f62abcf6c776250348b","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/Rakefile","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/Rakefile?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/fccd9d2260bea0a637973f62abcf6c776250348b","html":"https://github.com/octokit/octokit.rb/blob/master/Rakefile"}},{"name":"lib","path":"lib","sha":"491144185cb59cd50e80e2331772568d013def5a","size":0,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/lib?ref=master","html_url":"https://github.com/octokit/octokit.rb/tree/master/lib","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/trees/491144185cb59cd50e80e2331772568d013def5a","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/lib?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/trees/491144185cb59cd50e80e2331772568d013def5a","html":"https://github.com/octokit/octokit.rb/tree/master/lib"}},{"name":"octokit.gemspec","path":"octokit.gemspec","sha":"81ca512d47774349e433ce27ec2717f4f14dfbe0","size":971,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/octokit.gemspec?ref=master","html_url":"https://github.com/octokit/octokit.rb/blob/master/octokit.gemspec","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/81ca512d47774349e433ce27ec2717f4f14dfbe0","download_url":"https://raw.githubusercontent.com/octokit/octokit.rb/master/octokit.gemspec","type":"file","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/octokit.gemspec?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/blobs/81ca512d47774349e433ce27ec2717f4f14dfbe0","html":"https://github.com/octokit/octokit.rb/blob/master/octokit.gemspec"}},{"name":"script","path":"script","sha":"0e51eb8f09f0b8e2ed4900131625733339d83ff6","size":0,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/script?ref=master","html_url":"https://github.com/octokit/octokit.rb/tree/master/script","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/trees/0e51eb8f09f0b8e2ed4900131625733339d83ff6","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/script?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/trees/0e51eb8f09f0b8e2ed4900131625733339d83ff6","html":"https://github.com/octokit/octokit.rb/tree/master/script"}},{"name":"spec","path":"spec","sha":"cb9e9780c62cd7ea84e7754d65659af664ec7fad","size":0,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/spec?ref=master","html_url":"https://github.com/octokit/octokit.rb/tree/master/spec","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/trees/cb9e9780c62cd7ea84e7754d65659af664ec7fad","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/spec?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/trees/cb9e9780c62cd7ea84e7754d65659af664ec7fad","html":"https://github.com/octokit/octokit.rb/tree/master/spec"}},{"name":"yard","path":"yard","sha":"c2dcfa03b7f9e8a1942d50bc4dfc0a3adaa81a1e","size":0,"url":"https://api.github.com/repos/octokit/octokit.rb/contents/yard?ref=master","html_url":"https://github.com/octokit/octokit.rb/tree/master/yard","git_url":"https://api.github.com/repos/octokit/octokit.rb/git/trees/c2dcfa03b7f9e8a1942d50bc4dfc0a3adaa81a1e","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/octokit/octokit.rb/contents/yard?ref=master","git":"https://api.github.com/repos/octokit/octokit.rb/git/trees/c2dcfa03b7f9e8a1942d50bc4dfc0a3adaa81a1e","html":"https://github.com/octokit/octokit.rb/tree/master/yard"}}]'
+    http_version: 
+  recorded_at: Wed, 12 Sep 2018 08:29:38 GMT
+recorded_with: VCR 4.0.0

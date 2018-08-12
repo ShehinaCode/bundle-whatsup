@@ -13,16 +13,20 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
   let(:trailblazer_fetcher) { described_class.new(trailblazer_gem_info) }
 
   describe '.load' do
-    context 'when given gem name is empty' do
-      it 'raises ArgumentError with given empty name' do
-        expect { described_class.load('') }.to raise_error(ArgumentError)
+
+    subject { described_class.load(gem_name) }
+
+    let(:gem_name) { 'aaabbbccccdddd' }
+    context 'when given gem name is not exists' do
+      it 'raises an Argument error' do
+        expect { described_class.load(gem_name) }.to raise_error(ArgumentError)
       end
     end
 
     context 'when gem with given name exists' do
-      it 'should return an ChangelogFetcher object' do
-        expect(described_class.load('rails')).to be_an_instance_of Bundler::Whatsup::ChangelogFetcher
-      end
+      let(:gem_name) { 'faker' }
+      it { is_expected.to be_an_instance_of Bundler::Whatsup::ChangelogFetcher }
+      it { is_expected.not_to be_nil }
     end
   end
 
@@ -57,17 +61,6 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     context "when uri contains '.git' at the end" do
       let(:gem_info) { {'source_code_uri' => faker_git_url, 'homepage_uri' => nil} }
       it { is_expected.to eq('stympy/faker') }
-    end
-  end
-
-
-  describe '#load_changelog' do
-
-    subject { described_class.load(gem_name).load_changelog }
-    context 'when CHANGELOG.md is presented at repo' do
-      let(:gem_name) { 'faker' }
-      it { is_expected.to be_an_instance_of Bundler::Whatsup::ChangelogFetcher }
-      it { is_expected.not_to be_nil }
     end
   end
 

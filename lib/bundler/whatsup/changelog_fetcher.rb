@@ -20,6 +20,7 @@ module Bundler
       def initialize(gem_info)
         @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first or
           raise ArgumentError, "No valid source or homepage url specified for gem #{gem_info['name']}"
+        load_changelog
       end
 
       class << self
@@ -33,7 +34,7 @@ module Bundler
         def load(gem_name)
           gem_info = Gems.info(gem_name.downcase)
           raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
-          new(gem_info).load_changelog
+          new(gem_info)
         end
 
       end
@@ -64,6 +65,8 @@ module Bundler
       def repo_name
         @repo_name ||= Octokit::Repository.from_url(@url).to_s.chomp('.git')
       end
+
+      private
 
       # Loads changelog file and sets its content to @changelog if one is presented
       #
