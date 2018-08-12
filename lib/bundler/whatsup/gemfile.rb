@@ -2,25 +2,30 @@ require 'bundler'
 
 module Bundler
   module Whatsup
+    # Works with dependencies and specs described in Gemfile
     class Gemfile
       attr_accessor :specs, :dependencies
 
-      def initialize()
+      def initialize
         @specs = Bundler.load.specs.sort_by(&:name)
         @dependencies = Bundler.load.dependencies.sort_by(&:name)
       end
 
       # Returns Hash: spec_name=>version
+      #
+      # @return [Hash]
       def specs_versions
-        spec_versions = {}
+        specs_versions = {}
         specs.map do |spec|
-            spec_versions[spec.name.to_sym] = spec.version.to_s
+          specs_versions[spec.name.to_sym] = spec.version.to_s
         end
 
-        spec_versions
+        specs_versions
       end
 
       # Returns Hash: dependency_name=>version
+      #
+      # @return [Hash]
       def dependencies_versions
         dependencies_versions = {}
         dependencies.each do |dependency|

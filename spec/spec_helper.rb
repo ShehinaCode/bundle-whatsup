@@ -1,9 +1,11 @@
 require "bundler/setup"
 require "bundler/whatsup"
-require "coverage_helper"
+require "vcr"
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+RSPEC_ROOT = File.dirname(__FILE__)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -15,4 +17,12 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.ignore_hosts '127.0.0.2', 'localhost'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  # c.allow_http_connections_when_no_cassette = true
 end
