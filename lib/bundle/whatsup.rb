@@ -1,5 +1,6 @@
 require_relative './whatsup/version.rb'
 require 'bundler'
+
 module Bundle
   module Whatsup
     class Whatsup < Bundler::Plugin::API
