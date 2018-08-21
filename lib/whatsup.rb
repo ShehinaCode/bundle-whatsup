@@ -2,13 +2,12 @@ require './lib/whatsup/version.rb'
 require 'bundler'
 
 module Whatsup
-  class Whatsup < Bundler::Plugin::API
-    # Register bundle whatsup command
-    command "my_command"
 
-    # this method is called when we run 'bundle whatsup'
-    def exec(command, args)
-      puts "Hello, I'm '#{command}' command"
-    end
+  # Register bundle whatsup command
+  Bundler::Plugin::API.command('whatsup', self)
+
+  # this method is called when we run 'bundle whatsup'
+  def exec(command, args)
+    puts "Hello, I'm '#{command}' command"
   end
 end
