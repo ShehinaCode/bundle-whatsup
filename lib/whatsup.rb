@@ -1,4 +1,4 @@
-require_relative './whatsup/version.rb'
+require './lib/whatsup/version.rb'
 require 'bundler'
 
 module Whatsup

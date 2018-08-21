@@ -1,1 +1,1 @@
-require_relative './lib/bundle/whatsup.rb'
+require './lib/whatsup.rb'
