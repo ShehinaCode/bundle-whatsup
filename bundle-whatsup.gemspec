@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "bundle/whatsup/version"
+require "whatsup/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "bundle-whatsup"
-  spec.version       = Bundle::Whatsup::VERSION
+  spec.version       = Whatsup::VERSION
   spec.authors       = ["Andrew"]
   spec.email         = ["shehinacode@gmail.com"]
 
