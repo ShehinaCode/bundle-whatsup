@@ -8,7 +8,7 @@ module Bundle
 
       # this method is called when we run 'bundle whatsup'
       def exec(command, args)
-        puts "Hello, I'm 'command' command"
+        puts "Hello, I'm '#{command}' command"
       end
     end
   end
