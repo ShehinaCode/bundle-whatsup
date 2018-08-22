@@ -1,6 +1,6 @@
 require 'bundler'
 
-module Bundle
+module Bundler
   module Whatsup
     class GemfileParser
 

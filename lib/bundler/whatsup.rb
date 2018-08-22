@@ -8,7 +8,7 @@ module Bundler
       Plugin::API.command('whatsup', self)
 
       def exec(command, args)
-        puts "Hello, I'm #{command} command"
+        puts "You have next gems versions installed:\n"
         Bundler::Whatsup::GemfileParser.get_gems_versions
       end
     end
