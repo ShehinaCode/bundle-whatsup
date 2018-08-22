@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# require plugin itself for testing purposes
-plugin 'bundler-whatsup', git: 'https://github.com/ShehinaCode/bundler-whatsup.git' 
-# Specify your gem's dependencies in bundle-whatsup.gemspec
+# after running 'bundle install' you should run 'bundler plugin install bundler-whatsup'
+gem 'bundler-whatsup', :github => 'ShehinaCode/bundler-whatsup'
+
 gemspec

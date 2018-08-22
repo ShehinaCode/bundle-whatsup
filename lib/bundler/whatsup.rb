@@ -3,10 +3,12 @@ require 'bundler'
 
 module Bundler
   module Whatsup
-    Bundler::Plugin::API.command('whatsup', self)
+    class Command
+      Plugin::API.command('whatsup', self)
 
-    def exec(command, args)
-      puts "Hello, I'm #{command} command"
+      def exec(command, args)
+        puts "Hello, I'm #{command} command"
+      end
     end
   end
 end
