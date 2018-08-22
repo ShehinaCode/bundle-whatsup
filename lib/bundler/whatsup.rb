@@ -9,7 +9,7 @@ module Bundler
 
       def exec(command, args)
         puts "Hello, I'm #{command} command"
-        Gem.get_gems_versions
+        GemfileParser.get_gems_versions
       end
     end
   end
