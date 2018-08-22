@@ -1,6 +1,6 @@
-RSpec.describe Whatsup do
+RSpec.describe Bundler::Whatsup do
   it "has a version number" do
-    expect(Whatsup::VERSION).not_to be nil
+    expect(Bundler::Whatsup::VERSION).not_to be nil
   end
 
   it "does something useful" do

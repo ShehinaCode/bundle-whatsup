@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "bundle/whatsup"
+require "bundler/whatsup"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
