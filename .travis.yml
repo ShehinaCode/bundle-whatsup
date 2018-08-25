@@ -7,14 +7,12 @@ before_install: gem install bundler -v 1.16.2
 install:
   - mkdir ../test
   - cd ../test
-  - bundle init
-  - echo "gem 'bundler-whatsup', :github => 'ShehinaCode/bundler-whatsup'" >> Gemfile
   - cat Gemfile
   - pwd
   - ls -lha
-  - bundle install
+  - bundle install --gemfile=Gemfile.ci
   - bundle plugin install bundler-whatsup
   - bundle whatsup
 script:
-  - cd ..
+  - cd ../bundler-whatsup
   - rspec
