@@ -1,5 +1,4 @@
 require 'bundler'
-require "rspec"
 
 module Bundler
   module Whatsup
