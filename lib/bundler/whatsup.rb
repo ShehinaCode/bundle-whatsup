@@ -1,6 +1,6 @@
 require 'bundler/whatsup/version'
 require 'bundler'
-require 'bundler/whatsup/gemfile_parser'
+require 'bundler/whatsup/gemfile'
 
 module Bundler
   module Whatsup
