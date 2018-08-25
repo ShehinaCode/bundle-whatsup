@@ -7,7 +7,6 @@ before_install: gem install bundler -v 1.16.2
 install:
   - mkdir ../test
   - cd ../test
-  - cat Gemfile
   - pwd
   - ls -lha
   - bundle install --gemfile=Gemfile.ci
