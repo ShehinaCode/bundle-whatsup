@@ -9,6 +9,8 @@ install:
   - bundle init
   - echo "gem 'bundler-whatsup', :github => 'ShehinaCode/bundler-whatsup'" >> Gemfile
   - cat Gemfile
+  - pwd
+  - ls -lha
   - bundle install
   - bundle plugin install bundler-whatsup
   - bundle whatsup
