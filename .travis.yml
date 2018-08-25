@@ -2,6 +2,7 @@ sudo: false
 language: ruby
 rvm:
   - 2.5.1
+gemfile: Gemfile.ci
 before_install: gem install bundler -v 1.16.2
 install:
   - mkdir ../test
