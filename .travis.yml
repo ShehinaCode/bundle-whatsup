@@ -9,7 +9,6 @@ install:
   - cp Gemfile.ci ../test/Gemfile.ci
   - cd ../test
   - bundle install --gemfile=Gemfile.ci
-  - cat Gemfile.lock
   - bundle plugin install --git=https://github.com/ShehinaCode/bundler-whatsup.git
   - bundle plugin install bundler-whatsup
   - bundle whatsup
