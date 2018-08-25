@@ -6,8 +6,8 @@ gemfile: Gemfile.ci
 before_install: gem install bundler -v 1.16.2
 install:
   - bundle install --gemfile=Gemfile.ci
-  - bundler plugin install --git=https://github.com/ShehinaCode/bundler-whatsup.git
-  - bundler plugin install bundler-whatsup
+  - bundle plugin install --git=https://github.com/ShehinaCode/bundler-whatsup.git
+  - bundle plugin install bundler-whatsup
   - bundle whatsup
 script:
   - cd ../bundler-whatsup
