@@ -5,7 +5,7 @@ describe Bundler::Whatsup::GemInfo do
 
   before(:all) { @gem_info = described_class.new }
 
-  describe ".gems_sources" do
+  describe "#gems_sources" do
 
     before(:all) { @gem_info.gems_sources }
     let(:uri_github_pattern) { /(https|http):\/\/github.com\/[\w]+\/[\S]+/ }
