@@ -6,7 +6,7 @@ gemfile: Gemfile.ci
 before_install: gem install bundler -v 1.16.2
 install:
   - bundle install --without development
-  - bundle plugin install bundler-whatsup
+  - bundler plugin install bundler-whatsup
   - bundle whatsup
 script:
   - rspec
