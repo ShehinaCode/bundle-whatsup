@@ -5,13 +5,8 @@ rvm:
 gemfile: Gemfile.ci
 before_install: gem install bundler -v 1.16.2
 install:
-  - mkdir ../test
-  - cp Gemfile.ci ../test/Gemfile.ci
-  - cd ../test
-  - bundle install --gemfile=Gemfile.ci
-  - bundle plugin install --git=https://github.com/ShehinaCode/bundler-whatsup.git
+  - bundle install --without development
   - bundle plugin install bundler-whatsup
   - bundle whatsup
 script:
-  - cd ../bundler-whatsup
   - rspec
