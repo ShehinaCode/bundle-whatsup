@@ -9,7 +9,7 @@ module Bundler
 
       def exec(command, args)
         puts "You have next gems versions installed:\n"
-        Bundler::Whatsup::Gemfile.specs_versions
+        Bundler::Whatsup::Gemfile.new.specs_versions
       end
     end
   end
