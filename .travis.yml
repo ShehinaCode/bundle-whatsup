@@ -5,7 +5,6 @@ rvm:
 before_install: gem install bundler -v 1.16.4
 install:
   - bundle install
-  - bundler plugin install bundler-whatsup
   - bundle whatsup
 script:
   - rspec
