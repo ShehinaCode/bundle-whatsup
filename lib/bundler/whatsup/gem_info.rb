@@ -1,7 +1,7 @@
-require 'bundler'
-require 'open-uri'
-require 'json'
 require 'fileutils'
+require 'open-uri'
+require 'bundler'
+require 'json'
 
 module Bundler
   module Whatsup
@@ -35,11 +35,11 @@ module Bundler
           match_group = source.match(/(https|http):\/\/github.com\/(?<repo_path>[\w]+\/[\w]+)/)
           repo_path = match_group[:repo_path]
 
-          response = open_api('https://api.github.com/repos/' + repo_path + '/contents/CHANGELOG.md')
+          changelog_info = open_api("https://api.github.com/repos/#{repo_path}/contents/CHANGELOG.md")
 
-          next if response.nil?
+          next if changelog_info.nil?
 
-          download_link = response["download_url"]
+          download_link = changelog_info["download_url"]
           
           path = "./tmp/"
 
@@ -49,7 +49,7 @@ module Bundler
             f.write open_api(download_link, false)
           end
         end
-        
+
         self
       end
 
@@ -57,8 +57,7 @@ module Bundler
 
         def open_api(uri, json = true)
           begin
-            response = JSON.parse(open(uri).read) if json
-            response = open(uri).read unless json
+            response = json ? JSON.parse(open(uri).read) : open(uri).read
           rescue
             nil
           else
