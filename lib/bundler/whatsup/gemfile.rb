@@ -12,9 +12,9 @@ module Bundler
 
       # Returns Hash: spec_name=>version
       def specs_versions
-        spec_versions = {}
+        specs_versions = {}
         specs.map do |spec|
-            spec_versions[spec.name.to_sym] = spec.version.to_s
+            specs_versions[spec.name.to_sym] = spec.version.to_s
         end
 
         spec_versions
