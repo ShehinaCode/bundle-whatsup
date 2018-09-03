@@ -17,7 +17,7 @@ module Bundler
             specs_versions[spec.name.to_sym] = spec.version.to_s
         end
 
-        spec_versions
+        specs_versions
       end
 
       # Returns Hash: dependency_name=>version
