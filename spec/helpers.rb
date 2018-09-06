@@ -46,10 +46,25 @@ module Helpers
     end
   end
 
-  class OctokitDotRbRepoNameWithDotFGI < FakeGemsInfo
+  class EmptySourceAndHomepageUriFGI < FakeGemsInfo
+
+    def source_code_uri
+      nil
+    end
 
     def homepage_uri
+      nil
+    end
+  end
+
+  class OctokitDotRbRepoNameWithDotFGI < FakeGemsInfo
+
+    def source_code_uri
       'https://github.com/octokit/octokit.rb'
+    end
+
+    def homepage_uri
+      nil
     end
   end
 
@@ -63,6 +78,5 @@ module Helpers
       nil
     end
   end
-
 end
 

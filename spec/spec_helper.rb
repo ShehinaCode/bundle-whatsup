@@ -1,5 +1,7 @@
 require "bundler/setup"
 require "bundler/whatsup"
+require "helpers"
+require "vcr"
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -14,4 +16,11 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+  config.include Helpers, :include_fake_gems_info_helpers
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.ignore_hosts '127.0.0.2', 'localhost'
+  c.hook_into :webmock
 end

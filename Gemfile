@@ -2,7 +2,16 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# after running 'bundle install' you should run 'bundler plugin install bundler-whatsup'
-plugin 'bundler-whatsup', :github => 'ShehinaCode/bundler-whatsup'
+gem 'gems'
+gem 'octokit'
+
+group :development do
+  plugin 'bundler-whatsup', :github => 'ShehinaCode/bundler-whatsup'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+end
 
 gemspec
