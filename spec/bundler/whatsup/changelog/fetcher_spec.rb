@@ -50,7 +50,7 @@ describe Bundler::Whatsup::Changelog::Fetcher do
     end
 
     context "when CHANGELOG.md is not presented at repo" do
-      subject { VCR.use_cassete('rails_fetching') { described_class.load('rails').send :load_changelog } }
+      subject { described_class.load('rails').send :load_changelog }
       it { is_expected.to be_nil }
     end
   end
