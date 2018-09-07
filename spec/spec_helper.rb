@@ -17,11 +17,13 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
   config.include Helpers, :include_fake_gems_info_helpers
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 end
 
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.ignore_hosts '127.0.0.2', 'localhost'
   c.hook_into :webmock
-  c.allow_http_connections_when_no_cassette = true
+  c.configure_rspec_metadata!
+  # c.allow_http_connections_when_no_cassette = true
 end

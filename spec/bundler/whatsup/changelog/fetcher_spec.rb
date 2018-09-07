@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'bundler/whatsup/changelog/fetcher.rb'
 require 'vcr'
 
-describe Bundler::Whatsup::Changelog::Fetcher do
+describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
 
   describe "#.load" do
 
