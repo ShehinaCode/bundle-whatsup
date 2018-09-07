@@ -17,7 +17,6 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
   config.include Helpers, :include_fake_gems_info_helpers
-  config.treat_symbols_as_metadata_keys_with_true_values = true
 end
 
 VCR.configure do |c|
