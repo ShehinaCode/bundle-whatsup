@@ -48,45 +48,42 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 03e1adf6-f994-4a38-82df-52af4ce44f8a
+      - 62c95bd2-c2f9-431d-9e1c-7b9b4801416f
       X-Runtime:
-      - '0.019968'
+      - '0.017691'
       Strict-Transport-Security:
       - max-age=0; includeSubDomains
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
       - F_Rails 54.186.104.15:443
-      Accept-Ranges:
-      - bytes
-      - bytes
       Transfer-Encoding:
       - chunked
+      Accept-Ranges:
+      - bytes
       Date:
-      - Fri, 07 Sep 2018 19:28:03 GMT
+      - Sat, 08 Sep 2018 15:09:53 GMT
       Via:
       - 1.1 varnish
-      Age:
-      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-fra19136-FRA
+      - cache-fra19140-FRA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1536348484.761006,VS0,VE193
+      - S1536419394.557417,VS0,VE193
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"f1190e9cfeb7dd990dc15cae4260f1e9"'
+      - '"8843c24a02f1ac04cdd721a5f26257b2"'
       Server:
       - RubyGems.org
     body:
       encoding: ASCII-8BIT
-      string: '{"name":"rails","downloads":142672406,"version":"5.2.1","version_downloads":344718,"platform":"ruby","authors":"David
+      string: '{"name":"rails","downloads":142724070,"version":"5.2.1","version_downloads":350502,"platform":"ruby","authors":"David
         Heinemeier Hansson","info":"Ruby on Rails is a full-stack web framework optimized
         for programmer happiness and sustainable productivity. It encourages beautiful
         code by favoring convention over configuration.","licenses":["MIT"],"metadata":{},"sha":"776cfea45140972f1780236748f7cfe72cf95c032056812128433273c366078c","project_uri":"https://rubygems.org/gems/rails","gem_uri":"https://rubygems.org/gems/rails-5.2.1.gem","homepage_uri":"http://rubyonrails.org","wiki_uri":"","documentation_uri":"http://api.rubyonrails.org","mailing_list_uri":"http://groups.google.com/group/rubyonrails-talk","source_code_uri":"http://github.com/rails/rails","bug_tracker_uri":"http://github.com/rails/rails/issues","changelog_uri":null,"dependencies":{"development":[],"runtime":[{"name":"actioncable","requirements":"=
@@ -97,7 +94,7 @@ http_interactions:
         5.2.1"},{"name":"bundler","requirements":"\u003e= 1.3.0"},{"name":"railties","requirements":"=
         5.2.1"},{"name":"sprockets-rails","requirements":"\u003e= 2.0.0"}]}}'
     http_version: 
-  recorded_at: Fri, 07 Sep 2018 19:28:03 GMT
+  recorded_at: Sat, 08 Sep 2018 15:09:53 GMT
 - request:
     method: get
     uri: https://api.github.com/repos/rails/rails/contents/CHANGELOG.md
@@ -121,7 +118,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 07 Sep 2018 19:28:04 GMT
+      - Sat, 08 Sep 2018 15:09:54 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -131,9 +128,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '49'
+      - '53'
       X-Ratelimit-Reset:
-      - '1536352071'
+      - '1536422905'
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -154,12 +151,76 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Runtime-Rack:
-      - '0.042342'
+      - '0.039147'
       X-Github-Request-Id:
-      - C7FC:77FD:1E97BC8:4AFE112:5B92D144
+      - 95A0:7865:7726EA:F2DAC4:5B93E642
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Not Found","documentation_url":"https://developer.github.com/v3/repos/contents/#get-contents"}'
     http_version: 
-  recorded_at: Fri, 07 Sep 2018 19:28:04 GMT
+  recorded_at: Sat, 08 Sep 2018 15:09:54 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/rails/rails/contents/CHANGELOG.md
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 08 Sep 2018 15:09:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 404 Not Found
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '52'
+      X-Ratelimit-Reset:
+      - '1536422905'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.039712'
+      X-Github-Request-Id:
+      - 95A2:7865:772725:F2DB4D:5B93E642
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Not Found","documentation_url":"https://developer.github.com/v3/repos/contents/#get-contents"}'
+    http_version: 
+  recorded_at: Sat, 08 Sep 2018 15:09:55 GMT
 recorded_with: VCR 4.0.0

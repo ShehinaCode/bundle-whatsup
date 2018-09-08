@@ -20,7 +20,7 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.ignore_hosts '127.0.0.2', 'localhost'
   c.hook_into :webmock
   c.configure_rspec_metadata!
