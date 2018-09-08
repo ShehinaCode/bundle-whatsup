@@ -1,6 +1,5 @@
 require "bundler/setup"
 require "bundler/whatsup"
-require "helpers"
 require "vcr"
 
 lib = File.expand_path("../lib", __FILE__)
@@ -16,7 +15,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-  config.include Helpers, :include_fake_gems_info_helpers
 end
 
 VCR.configure do |c|

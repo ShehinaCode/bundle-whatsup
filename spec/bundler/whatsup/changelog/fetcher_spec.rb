@@ -11,7 +11,7 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
     end
   end
 
-  describe "#fetch_gem_repo_name", :include_fake_gems_info_helpers do
+  describe "#fetch_gem_repo_name" do
 
     it "fetches gem repo name when 'homepage_uri' is empty" do
       gem_info = double("Gems.info")
