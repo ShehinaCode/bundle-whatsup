@@ -6,11 +6,24 @@ require 'octokit'
 module Bundler
   module Whatsup
     module Changelog
-
+      # Fetches changelog file for given gem name
       class Fetcher
+
+        attr_reader :changelog
+
+        def initialize(gem_info)
+          @source_code_uri = gem_info['source_code_uri']
+          @homepage_uri    = gem_info['homepage_uri']
+        end
 
         class << self
 
+          # Creates and setups Changelog::Fetcher object for given gem name
+          #
+          # @param gem_name [String] Name of the gem
+          # @return [Changelog::Fetcher]
+          # @example
+          #   Changelog::Fetcher.load('nokogiri')
           def load(gem_name)
             gem_info = Gems.info(gem_name.downcase)
             raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
@@ -22,23 +35,21 @@ module Bundler
 
         end
 
-        def initialize(gem_info)
-          @source_code_uri = gem_info['source_code_uri']
-          @homepage_uri    = gem_info['homepage_uri']
-        end
-
-        def get_changelog
-          @changelog
-        end
-
-        def has_changelog?
+        # Checks if gem has changelog file or not
+        #
+        # @return [Boolean]
+        def changelog?
           !!@changelog
         end
 
         private
 
-        def fetch_gem_repo_name
-          gem_repo_name_regexp = /(https|http):\/\/github.com\/(?<gem_repo_name>[\S]+\/[\S]+)/
+
+        # Calculates gem repository name and its owner name at Github based on urls presented in gem metadata
+        #
+        # @return [String]
+        def gem_repo_name
+          gem_repo_name_regexp = %r{(https|http):\/\/github.com\/(?<gem_repo_name>[\S]+\/[\S]+)}
           gem_repo_name = nil
 
           if @source_code_uri && @source_code_uri.match(gem_repo_name_regexp)
@@ -50,14 +61,15 @@ module Bundler
           end
 
           @gem_repo_name = gem_repo_name.chomp '.git'
-          @gem_repo_name
         end
 
+        # Loads changelog file and sets it content to @changelog if one is presented
+        # @return [String|Boolean]
         def load_changelog
           path = 'CHANGELOG.md'
 
           begin
-            changelog_download_url = Octokit.contents(fetch_gem_repo_name, path: path)[:download_url]
+            changelog_download_url = Octokit.contents(gem_repo_name, path: path)[:download_url]
             @changelog = open(changelog_download_url).read
           rescue Octokit::NotFound
             @changelog = nil
