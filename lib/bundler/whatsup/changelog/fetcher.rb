@@ -44,20 +44,20 @@ module Bundler
         #
         # @return [String|nil]
         def changelog_file_name
-          return @changelog_name unless @changelog.nil?
+          return @changelog_file_name unless @changelog.nil?
           contents_response = Octokit.contents(gem_repo_name, path: '/')
           changelog_name_regexp = /(?<ch_name>changelog|changes).?(md|txt)?/
           files = []
           contents_response.each do |node|
             files.push(node[:name]) if node[:type] == 'file'
           end
-          @changelog_name = nil
+          @changelog_file_name = nil
           unless files.empty?
             files.each do |file_name|
-              @changelog_name = file_name if file_name.downcase!.match(changelog_name_regexp)
+              @changelog_file_name = file_name if file_name.downcase!.match(changelog_name_regexp)
             end
           end
-          @changelog_name
+          @changelog_file_name
         end
 
         private
@@ -85,7 +85,7 @@ module Bundler
         #
         # @return [String|Boolean]
         def load_changelog
-          changelog_download_url = Octokit.contents(gem_repo_name, path: changelog_name)[:download_url]
+          changelog_download_url = Octokit.contents(gem_repo_name, path: changelog_file_name)[:download_url]
           @changelog = open(changelog_download_url).read
         rescue Octokit::NotFound
           @changelog = nil

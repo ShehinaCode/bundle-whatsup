@@ -48,45 +48,42 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4e00d65d-00ef-4d9d-8d51-9fc078868d1c
+      - 110ecbd9-3b8b-43eb-b7af-35ca588a5ae7
       X-Runtime:
-      - '0.016165'
+      - '0.014175'
       Strict-Transport-Security:
       - max-age=0; includeSubDomains
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Backend:
       - F_Rails 54.186.104.15:443
-      Accept-Ranges:
-      - bytes
-      - bytes
       Transfer-Encoding:
       - chunked
+      Accept-Ranges:
+      - bytes
       Date:
-      - Mon, 10 Sep 2018 11:39:45 GMT
+      - Mon, 10 Sep 2018 12:11:35 GMT
       Via:
       - 1.1 varnish
-      Age:
-      - '0'
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-fra19140-FRA
+      - cache-fra19120-FRA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1536579585.892825,VS0,VE194
+      - S1536581495.466788,VS0,VE192
       Vary:
       - Accept-Encoding,Fastly-SSL
       Etag:
-      - '"26c14aa89e6dd1041fd55da13e97f947"'
+      - '"028293eb8a1f4ebd15fee9baacad6100"'
       Server:
       - RubyGems.org
     body:
       encoding: ASCII-8BIT
-      string: '{"name":"faker","downloads":27615344,"version":"1.9.1","version_downloads":468050,"platform":"ruby","authors":"Benjamin
+      string: '{"name":"faker","downloads":27616221,"version":"1.9.1","version_downloads":468305,"platform":"ruby","authors":"Benjamin
         Curtis","info":"Faker, a port of Data::Faker from Perl, is used to easily
         generate fake data: names, addresses, phone numbers, etc.","licenses":["MIT"],"metadata":{},"sha":"f140d8e67a8ff8ef46c535a1766590d6ad0ae81cbe8ab733060cd05566e60707","project_uri":"https://rubygems.org/gems/faker","gem_uri":"https://rubygems.org/gems/faker-1.9.1.gem","homepage_uri":"https://github.com/stympy/faker","wiki_uri":"","documentation_uri":"http://www.rubydoc.info/gems/faker/1.9.1","mailing_list_uri":"","source_code_uri":"https://github.com/stympy/faker","bug_tracker_uri":"","changelog_uri":null,"dependencies":{"development":[{"name":"launchy","requirements":"\u003e=
         0"},{"name":"minitest","requirements":"\u003e= 0"},{"name":"rake","requirements":"\u003e=
@@ -94,71 +91,5 @@ http_interactions:
         0"},{"name":"test-unit","requirements":"\u003e= 0"},{"name":"timecop","requirements":"\u003e=
         0"}],"runtime":[{"name":"i18n","requirements":"\u003e= 0.7"}]}}'
     http_version: 
-  recorded_at: Mon, 10 Sep 2018 11:39:45 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repos/stympy/faker/contents//
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.github.v3+json
-      User-Agent:
-      - Octokit Ruby Gem 4.11.0
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Server:
-      - GitHub.com
-      Date:
-      - Mon, 10 Sep 2018 11:39:45 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Status:
-      - 403 Forbidden
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '0'
-      X-Ratelimit-Reset:
-      - '1536582873'
-      X-Github-Media-Type:
-      - github.v3; format=json
-      Access-Control-Expose-Headers:
-      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
-        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      Access-Control-Allow-Origin:
-      - "*"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubdomains; preload
-      X-Frame-Options:
-      - deny
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Referrer-Policy:
-      - origin-when-cross-origin, strict-origin-when-cross-origin
-      Content-Security-Policy:
-      - default-src 'none'
-      X-Runtime-Rack:
-      - '0.017592'
-      X-Github-Request-Id:
-      - CA44:7863:118BB90:279EC63:5B965801
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"API rate limit exceeded for 37.115.72.170. (But here''s
-        the good news: Authenticated requests get a higher rate limit. Check out the
-        documentation for more details.)","documentation_url":"https://developer.github.com/v3/#rate-limiting"}'
-    http_version: 
-  recorded_at: Mon, 10 Sep 2018 11:39:45 GMT
+  recorded_at: Mon, 10 Sep 2018 12:11:35 GMT
 recorded_with: VCR 4.0.0

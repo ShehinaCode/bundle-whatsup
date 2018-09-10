@@ -17,97 +17,25 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 302
-      message: Found
+      code: 403
+      message: Forbidden
     headers:
       Server:
       - GitHub.com
       Date:
-      - Mon, 10 Sep 2018 11:39:32 GMT
-      Content-Type:
-      - text/html;charset=utf-8
-      Content-Length:
-      - '0'
-      Status:
-      - 302 Found
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '17'
-      X-Ratelimit-Reset:
-      - '1536582873'
-      Location:
-      - https://api.github.com/repositories/96395/contents/
-      Access-Control-Expose-Headers:
-      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
-        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
-      Access-Control-Allow-Origin:
-      - "*"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubdomains; preload
-      X-Frame-Options:
-      - deny
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Referrer-Policy:
-      - origin-when-cross-origin, strict-origin-when-cross-origin
-      Content-Security-Policy:
-      - default-src 'none'
-      X-Runtime-Rack:
-      - '0.023057'
-      X-Github-Request-Id:
-      - CA16:7865:177C8C8:3013793:5B9657F3
-    body:
-      encoding: UTF-8
-      string: ''
-    http_version: 
-  recorded_at: Mon, 10 Sep 2018 11:39:32 GMT
-- request:
-    method: get
-    uri: https://api.github.com/repositories/96395/contents/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.github.v3+json
-      User-Agent:
-      - Octokit Ruby Gem 4.11.0
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - GitHub.com
-      Date:
-      - Mon, 10 Sep 2018 11:39:32 GMT
+      - Mon, 10 Sep 2018 12:13:45 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Status:
-      - 200 OK
+      - 403 Forbidden
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '16'
+      - '0'
       X-Ratelimit-Reset:
       - '1536582873'
-      Cache-Control:
-      - public, max-age=60, s-maxage=60
-      Vary:
-      - Accept
-      Etag:
-      - W/"fd8de591610dea449e868b5b963e3daff910432e"
-      Last-Modified:
-      - Mon, 10 Sep 2018 08:13:34 GMT
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -128,12 +56,14 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Runtime-Rack:
-      - '0.023757'
+      - '0.015733'
       X-Github-Request-Id:
-      - CA18:7865:177C91F:301384B:5B9657F4
+      - CB1E:7860:608817:FDC319:5B965FF9
     body:
       encoding: ASCII-8BIT
-      string: '[{"name":".gitignore","path":".gitignore","sha":"447be08cc79b3b8f55365608d9a3d4ed68af8321","size":265,"url":"https://api.github.com/repos/stympy/faker/contents/.gitignore?ref=master","html_url":"https://github.com/stympy/faker/blob/master/.gitignore","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/447be08cc79b3b8f55365608d9a3d4ed68af8321","download_url":"https://raw.githubusercontent.com/stympy/faker/master/.gitignore","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/.gitignore?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/447be08cc79b3b8f55365608d9a3d4ed68af8321","html":"https://github.com/stympy/faker/blob/master/.gitignore"}},{"name":".rubocop.yml","path":".rubocop.yml","sha":"9292b930c31dd7a9ef6c30c1d23d15ad74754c11","size":540,"url":"https://api.github.com/repos/stympy/faker/contents/.rubocop.yml?ref=master","html_url":"https://github.com/stympy/faker/blob/master/.rubocop.yml","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/9292b930c31dd7a9ef6c30c1d23d15ad74754c11","download_url":"https://raw.githubusercontent.com/stympy/faker/master/.rubocop.yml","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/.rubocop.yml?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/9292b930c31dd7a9ef6c30c1d23d15ad74754c11","html":"https://github.com/stympy/faker/blob/master/.rubocop.yml"}},{"name":".travis.yml","path":".travis.yml","sha":"deff0eb7c2174215d48185fa646090a24d3aa154","size":545,"url":"https://api.github.com/repos/stympy/faker/contents/.travis.yml?ref=master","html_url":"https://github.com/stympy/faker/blob/master/.travis.yml","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/deff0eb7c2174215d48185fa646090a24d3aa154","download_url":"https://raw.githubusercontent.com/stympy/faker/master/.travis.yml","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/.travis.yml?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/deff0eb7c2174215d48185fa646090a24d3aa154","html":"https://github.com/stympy/faker/blob/master/.travis.yml"}},{"name":"CHANGELOG.md","path":"CHANGELOG.md","sha":"0525c1de0390a4ae4c13e680af3cb55186391c6c","size":65983,"url":"https://api.github.com/repos/stympy/faker/contents/CHANGELOG.md?ref=master","html_url":"https://github.com/stympy/faker/blob/master/CHANGELOG.md","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/0525c1de0390a4ae4c13e680af3cb55186391c6c","download_url":"https://raw.githubusercontent.com/stympy/faker/master/CHANGELOG.md","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/CHANGELOG.md?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/0525c1de0390a4ae4c13e680af3cb55186391c6c","html":"https://github.com/stympy/faker/blob/master/CHANGELOG.md"}},{"name":"CONTRIBUTING.md","path":"CONTRIBUTING.md","sha":"086ce0a4880edeb8e598c8741e5d0cb0383b28ff","size":3139,"url":"https://api.github.com/repos/stympy/faker/contents/CONTRIBUTING.md?ref=master","html_url":"https://github.com/stympy/faker/blob/master/CONTRIBUTING.md","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/086ce0a4880edeb8e598c8741e5d0cb0383b28ff","download_url":"https://raw.githubusercontent.com/stympy/faker/master/CONTRIBUTING.md","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/CONTRIBUTING.md?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/086ce0a4880edeb8e598c8741e5d0cb0383b28ff","html":"https://github.com/stympy/faker/blob/master/CONTRIBUTING.md"}},{"name":"Gemfile","path":"Gemfile","sha":"a2835ca7d95407ca839a5e55958104a1a55d53bd","size":271,"url":"https://api.github.com/repos/stympy/faker/contents/Gemfile?ref=master","html_url":"https://github.com/stympy/faker/blob/master/Gemfile","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/a2835ca7d95407ca839a5e55958104a1a55d53bd","download_url":"https://raw.githubusercontent.com/stympy/faker/master/Gemfile","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/Gemfile?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/a2835ca7d95407ca839a5e55958104a1a55d53bd","html":"https://github.com/stympy/faker/blob/master/Gemfile"}},{"name":"Gemfile.lock","path":"Gemfile.lock","sha":"d987ab40e4587de9c2420b8946084730da6af066","size":1062,"url":"https://api.github.com/repos/stympy/faker/contents/Gemfile.lock?ref=master","html_url":"https://github.com/stympy/faker/blob/master/Gemfile.lock","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/d987ab40e4587de9c2420b8946084730da6af066","download_url":"https://raw.githubusercontent.com/stympy/faker/master/Gemfile.lock","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/Gemfile.lock?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/d987ab40e4587de9c2420b8946084730da6af066","html":"https://github.com/stympy/faker/blob/master/Gemfile.lock"}},{"name":"History.md","path":"History.md","sha":"2caeb63467cb7af82b732814eac75c843e44654b","size":5678,"url":"https://api.github.com/repos/stympy/faker/contents/History.md?ref=master","html_url":"https://github.com/stympy/faker/blob/master/History.md","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/2caeb63467cb7af82b732814eac75c843e44654b","download_url":"https://raw.githubusercontent.com/stympy/faker/master/History.md","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/History.md?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/2caeb63467cb7af82b732814eac75c843e44654b","html":"https://github.com/stympy/faker/blob/master/History.md"}},{"name":"License.txt","path":"License.txt","sha":"1c0fd9f3b28564b84038395d90c16366fb53c8fb","size":1063,"url":"https://api.github.com/repos/stympy/faker/contents/License.txt?ref=master","html_url":"https://github.com/stympy/faker/blob/master/License.txt","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/1c0fd9f3b28564b84038395d90c16366fb53c8fb","download_url":"https://raw.githubusercontent.com/stympy/faker/master/License.txt","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/License.txt?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/1c0fd9f3b28564b84038395d90c16366fb53c8fb","html":"https://github.com/stympy/faker/blob/master/License.txt"}},{"name":"README.md","path":"README.md","sha":"b34a0cb072f133236077b4cbf69f327148c44c03","size":11451,"url":"https://api.github.com/repos/stympy/faker/contents/README.md?ref=master","html_url":"https://github.com/stympy/faker/blob/master/README.md","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/b34a0cb072f133236077b4cbf69f327148c44c03","download_url":"https://raw.githubusercontent.com/stympy/faker/master/README.md","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/README.md?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/b34a0cb072f133236077b4cbf69f327148c44c03","html":"https://github.com/stympy/faker/blob/master/README.md"}},{"name":"Rakefile","path":"Rakefile","sha":"6b1f42c9dd7073a414fa864d2a94a55a6b1d63ac","size":439,"url":"https://api.github.com/repos/stympy/faker/contents/Rakefile?ref=master","html_url":"https://github.com/stympy/faker/blob/master/Rakefile","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/6b1f42c9dd7073a414fa864d2a94a55a6b1d63ac","download_url":"https://raw.githubusercontent.com/stympy/faker/master/Rakefile","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/Rakefile?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/6b1f42c9dd7073a414fa864d2a94a55a6b1d63ac","html":"https://github.com/stympy/faker/blob/master/Rakefile"}},{"name":"doc","path":"doc","sha":"d87a29dc70b4d2bb4cb52f701918a0e640401cee","size":0,"url":"https://api.github.com/repos/stympy/faker/contents/doc?ref=master","html_url":"https://github.com/stympy/faker/tree/master/doc","git_url":"https://api.github.com/repos/stympy/faker/git/trees/d87a29dc70b4d2bb4cb52f701918a0e640401cee","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/doc?ref=master","git":"https://api.github.com/repos/stympy/faker/git/trees/d87a29dc70b4d2bb4cb52f701918a0e640401cee","html":"https://github.com/stympy/faker/tree/master/doc"}},{"name":"faker.gemspec","path":"faker.gemspec","sha":"f98027161f794910f43ace82fefad9f733ff9136","size":1034,"url":"https://api.github.com/repos/stympy/faker/contents/faker.gemspec?ref=master","html_url":"https://github.com/stympy/faker/blob/master/faker.gemspec","git_url":"https://api.github.com/repos/stympy/faker/git/blobs/f98027161f794910f43ace82fefad9f733ff9136","download_url":"https://raw.githubusercontent.com/stympy/faker/master/faker.gemspec","type":"file","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/faker.gemspec?ref=master","git":"https://api.github.com/repos/stympy/faker/git/blobs/f98027161f794910f43ace82fefad9f733ff9136","html":"https://github.com/stympy/faker/blob/master/faker.gemspec"}},{"name":"lib","path":"lib","sha":"aaf12d210e84f20aa14086fc7db2b0b96a32e90c","size":0,"url":"https://api.github.com/repos/stympy/faker/contents/lib?ref=master","html_url":"https://github.com/stympy/faker/tree/master/lib","git_url":"https://api.github.com/repos/stympy/faker/git/trees/aaf12d210e84f20aa14086fc7db2b0b96a32e90c","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/lib?ref=master","git":"https://api.github.com/repos/stympy/faker/git/trees/aaf12d210e84f20aa14086fc7db2b0b96a32e90c","html":"https://github.com/stympy/faker/tree/master/lib"}},{"name":"script","path":"script","sha":"b683d9718cd6045305bde640011b9829eb6d9f50","size":0,"url":"https://api.github.com/repos/stympy/faker/contents/script?ref=master","html_url":"https://github.com/stympy/faker/tree/master/script","git_url":"https://api.github.com/repos/stympy/faker/git/trees/b683d9718cd6045305bde640011b9829eb6d9f50","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/script?ref=master","git":"https://api.github.com/repos/stympy/faker/git/trees/b683d9718cd6045305bde640011b9829eb6d9f50","html":"https://github.com/stympy/faker/tree/master/script"}},{"name":"tasks","path":"tasks","sha":"5efcce84a0b5f99c50c1735fed826289c614f6c1","size":0,"url":"https://api.github.com/repos/stympy/faker/contents/tasks?ref=master","html_url":"https://github.com/stympy/faker/tree/master/tasks","git_url":"https://api.github.com/repos/stympy/faker/git/trees/5efcce84a0b5f99c50c1735fed826289c614f6c1","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/tasks?ref=master","git":"https://api.github.com/repos/stympy/faker/git/trees/5efcce84a0b5f99c50c1735fed826289c614f6c1","html":"https://github.com/stympy/faker/tree/master/tasks"}},{"name":"test","path":"test","sha":"a53e9b8bae4d04ca3b0f0047be3f57f7f9ae3f71","size":0,"url":"https://api.github.com/repos/stympy/faker/contents/test?ref=master","html_url":"https://github.com/stympy/faker/tree/master/test","git_url":"https://api.github.com/repos/stympy/faker/git/trees/a53e9b8bae4d04ca3b0f0047be3f57f7f9ae3f71","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/stympy/faker/contents/test?ref=master","git":"https://api.github.com/repos/stympy/faker/git/trees/a53e9b8bae4d04ca3b0f0047be3f57f7f9ae3f71","html":"https://github.com/stympy/faker/tree/master/test"}}]'
+      string: '{"message":"API rate limit exceeded for 37.115.72.170. (But here''s
+        the good news: Authenticated requests get a higher rate limit. Check out the
+        documentation for more details.)","documentation_url":"https://developer.github.com/v3/#rate-limiting"}'
     http_version: 
-  recorded_at: Mon, 10 Sep 2018 11:39:32 GMT
+  recorded_at: Mon, 10 Sep 2018 12:13:45 GMT
 recorded_with: VCR 4.0.0
