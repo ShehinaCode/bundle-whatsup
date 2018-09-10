@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/trailblazer/trailblazer/contents//
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 10 Sep 2018 15:59:28 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Status:
+      - 302 Found
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '9'
+      X-Ratelimit-Reset:
+      - '1536597602'
+      Location:
+      - https://api.github.com/repositories/10955751/contents/
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.023736'
+      X-Github-Request-Id:
+      - 88D0:64B5:D0492:1C233B:5B9694E0
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 10 Sep 2018 15:59:28 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repositories/10955751/contents/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 10 Sep 2018 15:59:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1536597602'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept
+      Etag:
+      - W/"a3d31521a5e16434bce9e4543707f0cac03fa92a"
+      Last-Modified:
+      - Mon, 10 Sep 2018 15:47:38 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.040921'
+      X-Github-Request-Id:
+      - 88D2:64B3:B20AE:18B90D:5B9694E0
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"name":".gitignore","path":".gitignore","sha":"e4bbcb1cc1f03de6b267480905f967163b29d140","size":173,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/.gitignore?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/.gitignore","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/e4bbcb1cc1f03de6b267480905f967163b29d140","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/.gitignore","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/.gitignore?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/e4bbcb1cc1f03de6b267480905f967163b29d140","html":"https://github.com/trailblazer/trailblazer/blob/master/.gitignore"}},{"name":".rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml","path":".rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml","sha":"27be8e1e3c4a16e453457690108d883328221bbc","size":2249,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/27be8e1e3c4a16e453457690108d883328221bbc","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/.rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/27be8e1e3c4a16e453457690108d883328221bbc","html":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop-https---raw-githubusercontent-com-trailblazer-meta-master-rubocop-yml"}},{"name":".rubocop.yml","path":".rubocop.yml","sha":"1e542638087001ea4da38bc57cdefdf3ed26eba2","size":768,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop.yml?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop.yml","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/1e542638087001ea4da38bc57cdefdf3ed26eba2","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/.rubocop.yml","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop.yml?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/1e542638087001ea4da38bc57cdefdf3ed26eba2","html":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop.yml"}},{"name":".rubocop_todo.yml","path":".rubocop_todo.yml","sha":"7723fdb91c148630faeb330471d7b01a7e509e72","size":14708,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop_todo.yml?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop_todo.yml","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/7723fdb91c148630faeb330471d7b01a7e509e72","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/.rubocop_todo.yml","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/.rubocop_todo.yml?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/7723fdb91c148630faeb330471d7b01a7e509e72","html":"https://github.com/trailblazer/trailblazer/blob/master/.rubocop_todo.yml"}},{"name":".travis.yml","path":".travis.yml","sha":"9dad7aba3a53729854e7cc95abd3ee3504a4f724","size":141,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/.travis.yml?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/.travis.yml","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/9dad7aba3a53729854e7cc95abd3ee3504a4f724","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/.travis.yml","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/.travis.yml?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/9dad7aba3a53729854e7cc95abd3ee3504a4f724","html":"https://github.com/trailblazer/trailblazer/blob/master/.travis.yml"}},{"name":"CHANGES.md","path":"CHANGES.md","sha":"f805632e6e2b1bca5d494cddf3287eb13ee33f96","size":13853,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/CHANGES.md?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/CHANGES.md","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/f805632e6e2b1bca5d494cddf3287eb13ee33f96","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/CHANGES.md","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/CHANGES.md?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/f805632e6e2b1bca5d494cddf3287eb13ee33f96","html":"https://github.com/trailblazer/trailblazer/blob/master/CHANGES.md"}},{"name":"COMM-LICENSE","path":"COMM-LICENSE","sha":"3effe9b6f30d5fecbf79e86cfe6698a536f95dd7","size":16389,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/COMM-LICENSE?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/COMM-LICENSE","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/3effe9b6f30d5fecbf79e86cfe6698a536f95dd7","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/COMM-LICENSE","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/COMM-LICENSE?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/3effe9b6f30d5fecbf79e86cfe6698a536f95dd7","html":"https://github.com/trailblazer/trailblazer/blob/master/COMM-LICENSE"}},{"name":"CONTRIBUTING.md","path":"CONTRIBUTING.md","sha":"cb1d3ad17c42f9daadae78919ac3ed2c8fbf6828","size":7599,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/CONTRIBUTING.md?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/CONTRIBUTING.md","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/cb1d3ad17c42f9daadae78919ac3ed2c8fbf6828","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/CONTRIBUTING.md","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/CONTRIBUTING.md?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/cb1d3ad17c42f9daadae78919ac3ed2c8fbf6828","html":"https://github.com/trailblazer/trailblazer/blob/master/CONTRIBUTING.md"}},{"name":"Gemfile","path":"Gemfile","sha":"a9cd1142da630f5c00af21ad0cf16130574dfbfe","size":1570,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/Gemfile?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/Gemfile","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/a9cd1142da630f5c00af21ad0cf16130574dfbfe","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/Gemfile","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/Gemfile?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/a9cd1142da630f5c00af21ad0cf16130574dfbfe","html":"https://github.com/trailblazer/trailblazer/blob/master/Gemfile"}},{"name":"LICENSE.txt","path":"LICENSE.txt","sha":"fa321734792d843bf9d7decf04f86dbaa5790bb0","size":1272,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/LICENSE.txt?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/LICENSE.txt","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/fa321734792d843bf9d7decf04f86dbaa5790bb0","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/LICENSE.txt","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/LICENSE.txt?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/fa321734792d843bf9d7decf04f86dbaa5790bb0","html":"https://github.com/trailblazer/trailblazer/blob/master/LICENSE.txt"}},{"name":"README.md","path":"README.md","sha":"d8e585d039159b995f93b237a29f1714ef5f6bb1","size":16900,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/README.md?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/README.md","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/d8e585d039159b995f93b237a29f1714ef5f6bb1","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/README.md","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/README.md?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/d8e585d039159b995f93b237a29f1714ef5f6bb1","html":"https://github.com/trailblazer/trailblazer/blob/master/README.md"}},{"name":"Rakefile","path":"Rakefile","sha":"89d672028541c6edd794b30ad84467ac9ec939e5","size":604,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/Rakefile?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/Rakefile","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/89d672028541c6edd794b30ad84467ac9ec939e5","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/Rakefile","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/Rakefile?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/89d672028541c6edd794b30ad84467ac9ec939e5","html":"https://github.com/trailblazer/trailblazer/blob/master/Rakefile"}},{"name":"THOUGHTS","path":"THOUGHTS","sha":"484d26c2812ea64aeb645ac17a79222f7cb71483","size":510,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/THOUGHTS?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/THOUGHTS","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/484d26c2812ea64aeb645ac17a79222f7cb71483","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/THOUGHTS","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/THOUGHTS?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/484d26c2812ea64aeb645ac17a79222f7cb71483","html":"https://github.com/trailblazer/trailblazer/blob/master/THOUGHTS"}},{"name":"doc","path":"doc","sha":"23763bb83eca7aea7f23a38d7f8421e703add811","size":0,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/doc?ref=master","html_url":"https://github.com/trailblazer/trailblazer/tree/master/doc","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/23763bb83eca7aea7f23a38d7f8421e703add811","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/doc?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/23763bb83eca7aea7f23a38d7f8421e703add811","html":"https://github.com/trailblazer/trailblazer/tree/master/doc"}},{"name":"lib","path":"lib","sha":"18e849db03374a379346e95bc59858b69a827fb6","size":0,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/lib?ref=master","html_url":"https://github.com/trailblazer/trailblazer/tree/master/lib","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/18e849db03374a379346e95bc59858b69a827fb6","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/lib?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/18e849db03374a379346e95bc59858b69a827fb6","html":"https://github.com/trailblazer/trailblazer/tree/master/lib"}},{"name":"test","path":"test","sha":"c2907e0842a73832f6f898155c88ec1d7dbac14d","size":0,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/test?ref=master","html_url":"https://github.com/trailblazer/trailblazer/tree/master/test","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/c2907e0842a73832f6f898155c88ec1d7dbac14d","download_url":null,"type":"dir","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/test?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/trees/c2907e0842a73832f6f898155c88ec1d7dbac14d","html":"https://github.com/trailblazer/trailblazer/tree/master/test"}},{"name":"trailblazer.gemspec","path":"trailblazer.gemspec","sha":"c51b6e13c3d1e91b6049430dab41ae00f696335b","size":1312,"url":"https://api.github.com/repos/trailblazer/trailblazer/contents/trailblazer.gemspec?ref=master","html_url":"https://github.com/trailblazer/trailblazer/blob/master/trailblazer.gemspec","git_url":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/c51b6e13c3d1e91b6049430dab41ae00f696335b","download_url":"https://raw.githubusercontent.com/trailblazer/trailblazer/master/trailblazer.gemspec","type":"file","_links":{"self":"https://api.github.com/repos/trailblazer/trailblazer/contents/trailblazer.gemspec?ref=master","git":"https://api.github.com/repos/trailblazer/trailblazer/git/blobs/c51b6e13c3d1e91b6049430dab41ae00f696335b","html":"https://github.com/trailblazer/trailblazer/blob/master/trailblazer.gemspec"}}]'
+    http_version: 
+  recorded_at: Mon, 10 Sep 2018 15:59:28 GMT
+recorded_with: VCR 4.0.0
