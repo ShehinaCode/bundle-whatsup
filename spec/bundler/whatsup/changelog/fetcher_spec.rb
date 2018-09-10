@@ -117,22 +117,27 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
     it 'returns nil if changelog file is not found at root of the repo' do
     end
 
-    context 'It should find changelog file when it name differs from CHANGELOG.md' do
+    context 'it should find changelog file when it name differs from CHANGELOG.md' do
 
       describe 'finds Changelog.md' do
         subject { described_class.load('faker').changelog_file_name }
         it { is_expected.to eq('CHANGELOG.md')}
       end
 
-      it 'finds CHANGES.md' do
-        subject { described_class.load('trailblazer').changelog_file_name }
+      describe 'finds CHANGES.md' do
+        let(:trailblazer_gem_info) { double('railblazer gem info') }
+        allow(:trailblazer_gem_info).to receive('[]').with('name').and_return('trailblazer')
+        allow(:trailblazer_gem_info).to receive('[]').with('source_code_uri').and_return('ttps://github.com/trailblazer/trailblazer')
+        allow(:trailblazer_gem_info).to receive('[]').with('homepage_uri').and_return(nil)
+        subject { described_class.new(trailblazer_gem_info).send :load_changelog }
+       
         it { is_expected.to eq('CHANGES.md')}
       end
 
-      it 'finds CHANGELOG.txt' do
+      describe 'finds CHANGELOG.txt' do
       end
 
-      it 'finds CHANGELOG' do
+      describe 'finds CHANGELOG' do
       end
     end
   end
