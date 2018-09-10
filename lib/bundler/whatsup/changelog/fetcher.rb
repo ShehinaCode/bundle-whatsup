@@ -13,7 +13,8 @@ module Bundler
 
         def initialize(gem_info)
           @source_code_uri = gem_info['source_code_uri']
-          @homepage_uri    = gem_info['homepage_uri']
+          @homepage_uri = gem_info['homepage_uri']
+          load_changelog
         end
 
         class << self
@@ -27,10 +28,7 @@ module Bundler
           def load(gem_name)
             gem_info = Gems.info(gem_name.downcase)
             raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
-
             fetcher = new(gem_info)
-            fetcher.send :load_changelog
-            fetcher
           end
 
         end
@@ -42,8 +40,27 @@ module Bundler
           !@changelog.nil?
         end
 
-        private
+        # Resolves changelog filename
+        #
+        # @return [String|nil]
+        def changelog_file_name
+          return @changelog_name unless @changelog.nil?
+          contents_response = Octokit.contents(gem_repo_name, path: '/')
+          changelog_name_regexp = /(?<ch_name>changelog|changes).?(md|txt)?/
+          files = []
+          contents_response.each do |node|
+            files.push(node[:name]) if node[:type] == 'file'
+          end
+          @changelog_name = nil
+          unless files.empty?
+            files.each do |file_name|
+              @changelog_name = file_name if file_name.downcase!.match(changelog_name_regexp)
+            end
+          end
+          @changelog_name
+        end
 
+        private
 
         # Calculates gem repository name and its owner name at Github based
         # on urls presented in gem metadata
@@ -68,15 +85,10 @@ module Bundler
         #
         # @return [String|Boolean]
         def load_changelog
-          path = 'CHANGELOG.md'
-
-          begin
-            changelog_download_url = Octokit.contents(gem_repo_name, path: path)[:download_url]
-            @changelog = open(changelog_download_url).read
-          rescue Octokit::NotFound
-            @changelog = nil
-          end
-
+          changelog_download_url = Octokit.contents(gem_repo_name, path: changelog_name)[:download_url]
+          @changelog = open(changelog_download_url).read
+        rescue Octokit::NotFound
+          @changelog = nil
         end
       end
     end

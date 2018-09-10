@@ -50,7 +50,6 @@ module Bundler
           result
         end
       end
-
     end
   end
 end

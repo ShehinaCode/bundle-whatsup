@@ -104,9 +104,33 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
       it { expect(subject.length).to be > 0 }
     end
 
-    context 'when CHANGELOG.md is not presented at repo' do
+    context 'when CHANGELOG.md is not presented at repo returned value' do
       subject { described_class.load('rails').changelog }
       it { is_expected.to be_nil }
+    end
+  end
+
+  describe '#changelog_name' do
+    it 'returns nil if changelog file is not found at root of the repo' do
+    end
+
+    context 'It should find changelog file when it name differs from CHANGELOG.md' do
+
+      describe 'finds Changelog.md' do
+        subject { described_class.load('faker').changelog_file_name }
+        it { is_expected.to eq('CHANGELOG.md')}
+      end
+
+      it 'finds CHANGES.md' do
+        subject { described_class.load('trailblazer').changelog_file_name }
+        it { is_expected.to eq('CHANGES.md')}
+      end
+
+      it 'finds CHANGELOG.txt' do
+      end
+
+      it 'finds CHANGELOG' do
+      end
     end
   end
 end
