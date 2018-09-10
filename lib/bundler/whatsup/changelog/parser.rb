@@ -4,6 +4,8 @@ module Bundler
 
       # Parses content of changelog file by versions
       class Parser
+        attr_accessor :parsed
+        
         VERSION_REGEXP = /
           ((.+)?[#]+(.+)?)                          # requires that line to be a title
           (?<version>(\d{1,3}\.\d{1,3}\.\d{1,3})    # requires three digits splitted by dots
@@ -18,6 +20,7 @@ module Bundler
         # @param content [String]
         def initialize(content)
           @content = content
+          @parsed = {}
         end
 
         # parse changelog content
@@ -29,27 +32,32 @@ module Bundler
 
           # remove empty line and split to array by newline symbol
           lines = @content.split("\r\n")
-          result = {}
           current_version = nil
-          store = proc do |version, content|
-            result[version] = result[version].nil? ? content : result[version] + "\r\n" + content
-          end
 
           lines.map do |line|
             next if line.empty?
 
             parsed_version = line.match(VERSION_REGEXP)
-
-            if !parsed_version.nil? && !parsed_version[:version].nil? && !parsed_version[:version].empty?
+            
+            # check if line matches regexp and if line has valid version
+            unless parsed_version.nil? && parsed_version[:version].nil? && parsed_version[:version].empty?
               current_version = parsed_version[:version]
-            else
-              store.call(current_version, line) unless current_version.nil?
+              next
             end
+            
+            store(current_version, line) unless current_version.nil?
           end
 
-          result
+          parsed
         end
+        
+        private 
+          
+          def store(version, content)
+            parsed[version] = parsed[version].nil? ? content : result[version] + "\r\n" + content
+          end
       end
+      
 
     end
   end
