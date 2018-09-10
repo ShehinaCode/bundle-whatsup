@@ -20,41 +20,32 @@ module Bundler
         # @param content [String]
         def initialize(content)
           @content = content
-          @parsed = {}
+          @parsed = Hash.new { |h, k| h[k] = [] }
         end
 
         # parse changelog content
-        # or nil if @content empty
+        # return nil if @content empty
         #
         # @return [NilClass|Hash]
         def run
           nil if @content.empty?
 
           # remove empty line and split to array by newline symbol
-          lines = @content.split("\r\n")
+          lines = @content.split("\r\n").reject(&:empty?)
           current_version = nil
 
           lines.map do |line|
-            next if line.empty?
-
-            parsed_version = line.match(VERSION_REGEXP)
 
             # check if line matches regexp and if line has valid version
-            unless parsed_version.nil? && parsed_version[:version].nil? && parsed_version[:version].empty?
-              current_version = parsed_version[:version]
+            if (m = line.match(VERSION_REGEXP))
+              current_version = m[:version]
               next
             end
 
-            store(current_version, line) unless current_version.nil?
+            parsed[current_version] << line unless current_version.nil?
           end
 
           parsed
-        end
-
-        private
-
-        def store(version, content)
-          parsed[version] = parsed[version].nil? ? content : result[version] + "\r\n" + content
         end
       end
     end
