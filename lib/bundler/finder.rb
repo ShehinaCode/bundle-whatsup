@@ -9,6 +9,9 @@ contents_response.each do |node|
 end
 changelog_name = nil
 files.each do |file_name|
-  changelog_name = file_name if filename && file_name.downcase!.match(changelog_name_regexp)
+  p file_name
+  if file_name.downcase.match(changelog_name_regexp)
+    changelog_name = file_name
+  end
 end
 changelog_name

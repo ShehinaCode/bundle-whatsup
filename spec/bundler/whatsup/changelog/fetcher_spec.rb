@@ -13,6 +13,10 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
 
   describe '#fetch_gem_repo_name' do
 
+    # let(:faker_nil_homepage_url) { double "Faker Gem.info with nil homepage_uri" }
+    # allow(faker_nil_homepage_uri).to receive('[]').with('source_code_uri').and_return('https://github.com/stympy/faker')
+    # allow(faker_nil_homepage_uri).to receive('[]').with('homepage_uri').and_return(nil)
+
     it "fetches gem repo name when 'homepage_uri' is empty" do
       gem_info = double('Gems.info')
       allow(gem_info).to receive('[]').with('source_code_uri').and_return('https://github.com/stympy/faker')
@@ -58,17 +62,16 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
   let(:faker_gem_info) { double(:faker_gem_info) }
 
   before do
-
-    allow(rails_gem_info).to receive('[]').with("name").and_return("rails")
+    allow(rails_gem_info).to receive('[]').with('name').and_return('rails')
     allow(rails_gem_info).to receive('[]').with('source_code_uri').and_return('https://github.com/rails/rails')
     allow(rails_gem_info).to receive('[]').with('homepage_uri').and_return(nil)
 
-    allow(faker_gem_info).to receive('[]').with('name').and_return("faker")
+    allow(faker_gem_info).to receive('[]').with('name').and_return('faker')
     allow(faker_gem_info).to receive('[]').with('source_code_uri').and_return('https://github.com/stympy/faker')
     allow(faker_gem_info).to receive('[]').with('homepage_uri').and_return(nil)
   end
 
-  describe 'load_changelog' do
+  describe '#load_changelog' do
 
     context 'when CHANGELOG.md is presented at repo returned value' do
       subject { described_class.new(faker_gem_info).send :load_changelog }

@@ -14,7 +14,6 @@ module Bundler
         def initialize(gem_info)
           @source_code_uri = gem_info['source_code_uri']
           @homepage_uri = gem_info['homepage_uri']
-          load_changelog
         end
 
         class << self
@@ -29,6 +28,8 @@ module Bundler
             gem_info = Gems.info(gem_name.downcase)
             raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
             fetcher = new(gem_info)
+            fetcher.send :load_changelog
+            fetcher
           end
 
         end
@@ -44,7 +45,7 @@ module Bundler
         #
         # @return [String|nil]
         def changelog_file_name
-          return @changelog_file_name unless @changelog.nil?
+          # return @changelog_file_name unless @changelog_file_name.nil?
           contents_response = Octokit.contents(gem_repo_name, path: '/')
           changelog_name_regexp = /(?<ch_name>changelog|changes).?(md|txt)?/
           files = []
@@ -54,7 +55,7 @@ module Bundler
           @changelog_file_name = nil
           unless files.empty?
             files.each do |file_name|
-              @changelog_file_name = file_name if file_name.downcase!.match(changelog_name_regexp)
+              @changelog_file_name = file_name if !file_name.nil? && file_name.downcase.match(changelog_name_regexp)
             end
           end
           @changelog_file_name
@@ -85,10 +86,12 @@ module Bundler
         #
         # @return [String|Boolean]
         def load_changelog
-          changelog_download_url = Octokit.contents(gem_repo_name, path: changelog_file_name)[:download_url]
-          @changelog = open(changelog_download_url).read
-        rescue Octokit::NotFound
-          @changelog = nil
+          if !changelog_file_name.nil?
+            changelog_download_url = Octokit.contents(gem_repo_name, :path => changelog_file_name)['download_url']
+            @changelog = open(changelog_download_url).read
+          else
+            @changelog = nil
+          end
         end
       end
     end

@@ -5,7 +5,7 @@ module Bundler
     class Gemfile
       attr_accessor :specs, :dependencies
 
-      def initialize()
+      def initialize
         @specs = Bundler.load.specs.sort_by(&:name)
         @dependencies = Bundler.load.dependencies.sort_by(&:name)
       end
@@ -14,7 +14,7 @@ module Bundler
       def specs_versions
         specs_versions = {}
         specs.map do |spec|
-            specs_versions[spec.name.to_sym] = spec.version.to_s
+          specs_versions[spec.name.to_sym] = spec.version.to_s
         end
 
         specs_versions
