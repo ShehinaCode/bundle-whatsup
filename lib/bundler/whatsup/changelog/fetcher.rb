@@ -39,18 +39,18 @@ module Bundler
         #
         # @return [Boolean]
         def changelog?
-          !!@changelog
+          !@changelog.nil?
         end
 
         private
 
 
-        # Calculates gem repository name and its owner name at Github based on urls presented in gem metadata
+        # Calculates gem repository name and its owner name at Github based
+        # on urls presented in gem metadata
         #
         # @return [String]
         def gem_repo_name
-          gem_repo_name_regexp = %r{(https|http):\/\/github.com\/(?<gem_repo_name>[\S]+\/[\S]+)}
-          gem_repo_name = nil
+          gem_repo_name_regexp = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
           if @source_code_uri && @source_code_uri.match(gem_repo_name_regexp)
             gem_repo_name = @source_code_uri.match(gem_repo_name_regexp)[:gem_repo_name]
@@ -63,7 +63,9 @@ module Bundler
           @gem_repo_name = gem_repo_name.chomp '.git'
         end
 
-        # Loads changelog file and sets it content to @changelog if one is presented
+        # Loads changelog file and sets it content to @changelog
+        # if one is presented
+        #
         # @return [String|Boolean]
         def load_changelog
           path = 'CHANGELOG.md'
