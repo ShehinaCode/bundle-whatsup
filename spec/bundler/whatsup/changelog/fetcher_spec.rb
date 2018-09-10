@@ -125,10 +125,12 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
       end
 
       describe 'finds CHANGES.md' do
-        let(:trailblazer_gem_info) { double('railblazer gem info') }
-        allow(:trailblazer_gem_info).to receive('[]').with('name').and_return('trailblazer')
-        allow(:trailblazer_gem_info).to receive('[]').with('source_code_uri').and_return('ttps://github.com/trailblazer/trailblazer')
-        allow(:trailblazer_gem_info).to receive('[]').with('homepage_uri').and_return(nil)
+        let(:trailblazer_gem_info) do
+          double('trailblazer')
+          allow(:trailblazer).to receive('[]').with('name').and_return('trailblazer')
+          allow(:trailblazer).to receive('[]').with('source_code_uri').and_return('https://github.com/trailblazer/trailblazer')
+          allow(:trailblazer).to receive('[]').with('homepage_uri').and_return(nil)
+        end
         subject { described_class.new(trailblazer_gem_info).send :load_changelog }
        
         it { is_expected.to eq('CHANGES.md')}
