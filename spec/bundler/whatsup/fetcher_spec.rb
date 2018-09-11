@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'bundler/whatsup/changelog/fetcher.rb'
+require 'bundler/whatsup/changelog_fetcher.rb'
 require 'vcr'
 
-describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
+describe Bundler::Whatsup::ChangelogFetcher, :vcr do
 
   describe '#.load' do
 
@@ -12,10 +12,6 @@ describe Bundler::Whatsup::Changelog::Fetcher, :vcr do
   end
 
   describe '#fetch_gem_repo_name' do
-
-    # let(:faker_nil_homepage_url) { double "Faker Gem.info with nil homepage_uri" }
-    # allow(faker_nil_homepage_uri).to receive('[]').with('source_code_uri').and_return('https://github.com/stympy/faker')
-    # allow(faker_nil_homepage_uri).to receive('[]').with('homepage_uri').and_return(nil)
 
     it "fetches gem repo name when 'homepage_uri' is empty" do
       gem_info = double('Gems.info')
