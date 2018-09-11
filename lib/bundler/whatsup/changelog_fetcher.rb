@@ -8,7 +8,7 @@ module Bundler
     # Fetches changelog file for given gem name
     class ChangelogFetcher
 
-      attr_reader :changelog
+      attr_reader :content
 
       def initialize(gem_info)
         @source_code_uri = gem_info['source_code_uri']
@@ -27,7 +27,7 @@ module Bundler
           gem_info = Gems.info(gem_name.downcase)
           raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
           fetcher = new(gem_info)
-          fetcher.send :load_changelog
+          fetcher.load_changelog
           fetcher
         end
 
@@ -37,15 +37,15 @@ module Bundler
       #
       # @return [Boolean]
       def changelog?
-        !@changelog.nil?
+        !@content.nil?
       end
 
       # Resolves changelog filename
       #
       # @return [String|nil]
-      def changelog_file_name
+      def filename
         # return @changelog_file_name unless @changelog_file_name.nil?
-        contents_response = Octokit.contents(gem_repo_name, path: '/')
+        contents_response = Octokit.contents(repo_name, path: '/')
         changelog_name_regexp = /(?<ch_name>changelog|changes).?(md|txt)?/
         files = []
         contents_response.each do |node|
@@ -60,13 +60,11 @@ module Bundler
         @changelog_file_name
       end
 
-      private
-
       # Calculates gem repository name and its owner name at Github based
       # on urls presented in gem metadata
       #
       # @return [String]
-      def gem_repo_name
+      def repo_name
         gem_repo_name_regexp = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
         if @source_code_uri && @source_code_uri.match(gem_repo_name_regexp)
@@ -85,12 +83,8 @@ module Bundler
       #
       # @return [String|Boolean]
       def load_changelog
-        if !changelog_file_name.nil?
-          changelog_download_url = Octokit.contents(gem_repo_name, :path => changelog_file_name)['download_url']
-          @changelog = open(changelog_download_url).read
-        else
-          @changelog = nil
-        end
+        return unless filename
+        @content = Base64.decode64(Octokit.contents(repo_name, path: filename).content)
       end
     end
   end
