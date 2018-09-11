@@ -6,6 +6,10 @@ require 'octokit'
 module Bundler
   module Whatsup
     # Fetches changelog file for given gem name
+    #
+    # @example
+    #   changelog_content = ChangelogFetcher.load('sinatra').content
+    #   has_changelog     = ChangelogFetcher.load('rais').changelog?
     class ChangelogFetcher
 
       attr_reader :content
@@ -20,15 +24,13 @@ module Bundler
         # Creates and setups Changelog::Fetcher object for given gem name
         #
         # @param gem_name [String] Name of the gem
-        # @return [Changelog::Fetcher]
+        # @return [ChangelogFetcher]
         # @example
         #   Changelog::Fetcher.load('nokogiri')
         def load(gem_name)
           gem_info = Gems.info(gem_name.downcase)
           raise ArgumentError, "Gem #{gem_name} not found" if gem_info.empty?
-          fetcher = new(gem_info)
-          fetcher.load_changelog
-          fetcher
+          new(gem_info).load_changelog
         end
 
       end
@@ -78,13 +80,13 @@ module Bundler
         @gem_repo_name = gem_repo_name.chomp '.git'
       end
 
-      # Loads changelog file and sets it content to @changelog
-      # if one is presented
+      # Loads changelog file and sets its content to @changelog if one is presented
       #
-      # @return [String|Boolean]
+      # @return [ChangelogFetcher]
       def load_changelog
-        return unless filename
+        return self unless filename
         @content = Base64.decode64(Octokit.contents(repo_name, path: filename).content)
+        self
       end
     end
   end

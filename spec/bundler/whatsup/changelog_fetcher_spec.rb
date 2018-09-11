@@ -13,8 +13,16 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
   let(:trailblazer_fetcher) { described_class.new(trailblazer_gem_info) }
 
   describe '.load' do
-    it 'raises ArgumentError with given empty name' do
-      expect { described_class.load('') }.to raise_error(ArgumentError)
+    context 'when given gem name is empty' do
+      it 'raises ArgumentError with given empty name' do
+        expect { described_class.load('') }.to raise_error(ArgumentError)
+      end
+    end
+
+    context 'when gem with given name exists' do
+      it 'should return an ChangelogFetcher object' do
+        expect(described_class.load('rails')).to be_an_instance_of Bundler::Whatsup::ChangelogFetcher
+      end
     end
   end
 
@@ -58,14 +66,8 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     subject { described_class.load(gem_name).load_changelog }
     context 'when CHANGELOG.md is presented at repo' do
       let(:gem_name) { 'faker' }
-      it { is_expected.to be_a String }
+      it { is_expected.to be_an_instance_of Bundler::Whatsup::ChangelogFetcher }
       it { is_expected.not_to be_nil }
-      it { expect(subject.length).to be > 0 }
-    end
-
-    context 'when CHANGELOG.md is not presented at repo' do
-      let(:gem_name) { 'rails' }
-      it { is_expected.to be_nil }
     end
   end
 

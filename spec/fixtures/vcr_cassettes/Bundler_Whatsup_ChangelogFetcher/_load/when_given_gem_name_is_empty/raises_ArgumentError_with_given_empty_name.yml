@@ -42,9 +42,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b3e85862-5916-4425-8a8c-4b6ae19c7f78
+      - f70fc0b0-3887-444b-ac40-290c47974299
       X-Runtime:
-      - '0.003631'
+      - '0.003759'
       Strict-Transport-Security:
       - max-age=0; includeSubDomains
       Content-Length:
@@ -52,7 +52,7 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 11 Sep 2018 15:30:36 GMT
+      - Tue, 11 Sep 2018 19:24:31 GMT
       Via:
       - 1.1 varnish
       Age:
@@ -60,13 +60,13 @@ http_interactions:
       Connection:
       - keep-alive
       X-Served-By:
-      - cache-fra19143-FRA
+      - cache-fra19134-FRA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1536679837.675794,VS0,VE179
+      - S1536693871.874003,VS0,VE182
       Vary:
       - Accept-Encoding
       Server:
@@ -75,5 +75,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: This rubygem could not be found.
     http_version: 
-  recorded_at: Tue, 11 Sep 2018 15:30:37 GMT
+  recorded_at: Tue, 11 Sep 2018 19:24:30 GMT
 recorded_with: VCR 4.0.0

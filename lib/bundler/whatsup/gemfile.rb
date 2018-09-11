@@ -2,6 +2,7 @@ require 'bundler'
 
 module Bundler
   module Whatsup
+    # Works with dependencies and specs described in Gemfile
     class Gemfile
       attr_accessor :specs, :dependencies
 
@@ -11,6 +12,8 @@ module Bundler
       end
 
       # Returns Hash: spec_name=>version
+      #
+      # @return [Hash]
       def specs_versions
         specs_versions = {}
         specs.map do |spec|
@@ -21,6 +24,8 @@ module Bundler
       end
 
       # Returns Hash: dependency_name=>version
+      #
+      # @return [Hash]
       def dependencies_versions
         dependencies_versions = {}
         dependencies.each do |dependency|
