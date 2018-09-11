@@ -15,11 +15,11 @@ module Bundler
       attr_reader :content
 
       CHANGELOG_NAME_REGEXP = /(?<ch_name>changelog|changes).?(md|txt)?/i
-      GEM_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
+      GITHUB_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
       def initialize(gem_info)
-        @source_code_uri = gem_info['source_code_uri']
-        @homepage_uri = gem_info['homepage_uri']
+        @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first or
+          raise ArgumentError, "No valid source or homepage url specified for gem #{gem_info['name']}"
       end
 
       class << self
@@ -63,16 +63,7 @@ module Bundler
       #
       # @return [String]
       def repo_name
-
-        if @source_code_uri && @source_code_uri.match(GEM_REPO_REGEXP)
-          gem_repo_name = @source_code_uri.match(GEM_REPO_REGEXP)[:gem_repo_name]
-        elsif @homepage_uri && @homepage_uri.match(GEM_REPO_REGEXP)
-          gem_repo_name = @homepage_uri.match(GEM_REPO_REGEXP)[:gem_repo_name]
-        else
-          raise NameError, "No valid source or homepage url specified for gem #{@gem_name}"
-        end
-
-        @gem_repo_name = gem_repo_name.chomp '.git'
+        @repo_name ||= Octokit::Repository.from_url(@url).to_s.chomp('.git')
       end
 
       # Loads changelog file and sets its content to @changelog if one is presented
