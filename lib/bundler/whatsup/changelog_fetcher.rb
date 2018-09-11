@@ -14,6 +14,9 @@ module Bundler
 
       attr_reader :content
 
+      CHANGELOG_NAME_REGEXP = /(?<ch_name>changelog|changes).?(md|txt)?/
+      GEM_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
+
       def initialize(gem_info)
         @source_code_uri = gem_info['source_code_uri']
         @homepage_uri = gem_info['homepage_uri']
@@ -48,7 +51,6 @@ module Bundler
       def filename
         # return @changelog_file_name unless @changelog_file_name.nil?
         contents_response = Octokit.contents(repo_name, path: '/')
-        changelog_name_regexp = /(?<ch_name>changelog|changes).?(md|txt)?/
         files = []
         contents_response.each do |node|
           files.push(node[:name]) if node[:type] == 'file'
@@ -56,7 +58,7 @@ module Bundler
         @changelog_file_name = nil
         unless files.empty?
           files.each do |file_name|
-            @changelog_file_name = file_name if !file_name.nil? && file_name.downcase.match(changelog_name_regexp)
+            @changelog_file_name = file_name if !file_name.nil? && file_name.downcase.match(CHANGELOG_NAME_REGEXP)
           end
         end
         @changelog_file_name
@@ -67,12 +69,11 @@ module Bundler
       #
       # @return [String]
       def repo_name
-        gem_repo_name_regexp = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
-        if @source_code_uri && @source_code_uri.match(gem_repo_name_regexp)
-          gem_repo_name = @source_code_uri.match(gem_repo_name_regexp)[:gem_repo_name]
-        elsif @homepage_uri && @homepage_uri.match(gem_repo_name_regexp)
-          gem_repo_name = @homepage_uri.match(gem_repo_name_regexp)[:gem_repo_name]
+        if @source_code_uri && @source_code_uri.match(GEM_REPO_REGEXP)
+          gem_repo_name = @source_code_uri.match(GEM_REPO_REGEXP)[:gem_repo_name]
+        elsif @homepage_uri && @homepage_uri.match(GEM_REPO_REGEXP)
+          gem_repo_name = @homepage_uri.match(GEM_REPO_REGEXP)[:gem_repo_name]
         else
           raise NameError, "No valid source or homepage url specified for gem #{@gem_name}"
         end
