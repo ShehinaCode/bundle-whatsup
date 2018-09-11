@@ -14,7 +14,7 @@ module Bundler
 
       attr_reader :content
 
-      CHANGELOG_NAME_REGEXP = /(?<ch_name>changelog|changes).?(md|txt)?/
+      CHANGELOG_NAME_REGEXP = /(?<ch_name>changelog|changes).?(md|txt)?/i
       GEM_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
       def initialize(gem_info)
@@ -55,13 +55,7 @@ module Bundler
         contents_response.each do |node|
           files.push(node[:name]) if node[:type] == 'file'
         end
-        @changelog_file_name = nil
-        unless files.empty?
-          files.each do |file_name|
-            @changelog_file_name = file_name if !file_name.nil? && file_name.downcase.match(CHANGELOG_NAME_REGEXP)
-          end
-        end
-        @changelog_file_name
+        @changelog_file_name = files.grep(CHANGELOG_NAME_REGEXP).first
       end
 
       # Calculates gem repository name and its owner name at Github based
