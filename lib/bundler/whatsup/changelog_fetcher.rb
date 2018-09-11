@@ -49,7 +49,7 @@ module Bundler
       #
       # @return [String|nil]
       def filename
-        # return @changelog_file_name unless @changelog_file_name.nil?
+        return @changelog_file_name unless @changelog_file_name.nil?
         contents_response = Octokit.contents(repo_name, path: '/')
         files = []
         contents_response.each do |node|
@@ -58,8 +58,7 @@ module Bundler
         @changelog_file_name = files.grep(CHANGELOG_NAME_REGEXP).first
       end
 
-      # Calculates gem repository name and its owner name at Github based
-      # on urls presented in gem metadata
+      # Calculates gem repository name and its owner name at Github based on urls presented in gem metadata
       #
       # @return [String]
       def repo_name
