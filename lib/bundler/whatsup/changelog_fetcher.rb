@@ -66,11 +66,7 @@ module Bundler
       #
       # @return [ChangelogFetcher]
       def load_changelog
-        unless filename && repo_name
-          @content = nil
-          return self
-        end
-
+        return self unless filename
         @content ||= Base64.decode64(Octokit&.contents(repo_name, path: filename).content)
         self
       end
