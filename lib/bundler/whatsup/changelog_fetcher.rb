@@ -71,7 +71,7 @@ module Bundler
           return self
         end
 
-        @content = Base64.decode64(Octokit&.contents(repo_name, path: filename).content)
+        @content ||= Base64.decode64(Octokit&.contents(repo_name, path: filename).content)
         self
       end
 
