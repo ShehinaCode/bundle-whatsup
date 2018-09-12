@@ -4,13 +4,10 @@ require 'vcr'
 
 describe Bundler::Whatsup::ChangelogFetcher, :vcr do
 
-  let(:faker_url)       { 'https://github.com/stympy/faker' }
-  let(:octokit_url)     { 'https://github.com/octokit/octokit.rb' }
-  let(:faker_git_url)   { 'https://github.com/stympy/faker.git' }
-  let(:trailblazer_url) { 'https://github.com/trailblazer/trailblazer' }
+  let(:sample_url)  { 'https://github.com/stympy/faker' }
 
-  let(:trailblazer_gem_info) { {'source_code_uri' => trailblazer_url, 'homepage_uri' => nil} }
-  let(:trailblazer_fetcher) { described_class.new(trailblazer_gem_info) }
+  let(:trailblazer_gem_info) { {'source_code_uri' => 'https://github.com/trailblazer/trailblazer', 'homepage_uri' => nil} }
+  let(:trailblazer_fetcher)  { described_class.new(trailblazer_gem_info) }
 
   describe '.load' do
 
@@ -36,12 +33,12 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     subject { described_class.new(gem_info).repo_name }
 
     context "when 'homepage_uri' is not presented" do
-      let(:gem_info) { {'source_code_uri' => faker_url, 'homepage_uri' => nil} }
+      let(:gem_info) { {'source_code_uri' => sample_url, 'homepage_uri' => nil} }
       it { is_expected.to eq('stympy/faker') }
     end
 
     context "when 'source_code_uri' is not presented" do
-      let(:gem_info) { {'source_code_uri' => nil, 'homepage_uri' => faker_url} }
+      let(:gem_info) { {'source_code_uri' => nil, 'homepage_uri' => sample_url} }
       it { is_expected.to eq('stympy/faker') }
     end
 
@@ -54,12 +51,12 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     end
 
     context "when uri contains a dots ('octokit/octokit.rb')" do
-      let(:gem_info) { {'source_code_uri' => octokit_url, 'homepage_uri' => nil} }
+      let(:gem_info) { {'source_code_uri' => 'https://github.com/octokit/octokit.rb', 'homepage_uri' => nil} }
       it { is_expected.to eq('octokit/octokit.rb') }
     end
 
     context "when uri contains '.git' at the end" do
-      let(:gem_info) { {'source_code_uri' => faker_git_url, 'homepage_uri' => nil} }
+      let(:gem_info) { {'source_code_uri' => 'https://github.com/stympy/faker.git', 'homepage_uri' => nil} }
       it { is_expected.to eq('stympy/faker') }
     end
   end
