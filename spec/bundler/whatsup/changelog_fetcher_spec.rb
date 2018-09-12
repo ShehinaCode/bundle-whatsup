@@ -79,7 +79,6 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     context 'when CHANGELOG.md is presented at repo' do
       let(:gem_name) { 'faker' }
       it { is_expected.to be_a String }
-      it { is_expected.not_to be_nil }
       it { expect(subject.length).to be > 0 }
     end
 
