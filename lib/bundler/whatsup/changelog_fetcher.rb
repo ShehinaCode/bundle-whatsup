@@ -56,7 +56,7 @@ module Bundler
       #
       # @return [String]
       def repo_name
-        return nil unless @url
+        return unless @url
         @repo_name ||= Octokit::Repository.from_url(@url).to_s.chomp('.git')
       end
 
