@@ -49,7 +49,7 @@ module Bundler
       #
       # @return [String|nil]
       def filename
-        @changelog_file_name ||= resolve_filename
+        @filename ||= resolve_filename
       end
 
       # Calculates gem repository name and its owner name at Github based on urls presented in gem metadata
