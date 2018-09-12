@@ -27,7 +27,7 @@ module Bundler
       #
       # @return [NilClass|Hash]
       def run
-        nil if @content.empty?
+        return if @content.empty?
 
         # remove empty line and split to array by newline symbol
         lines = @content.split("\r\n").reject(&:empty?)
