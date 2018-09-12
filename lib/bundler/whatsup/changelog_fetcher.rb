@@ -18,8 +18,7 @@ module Bundler
       GITHUB_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
       def initialize(gem_info)
-        @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first or
-          raise ArgumentError, "No valid source or homepage url specified for gem #{gem_info['name']}"
+        @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first or nil
         load_changelog
       end
 
@@ -57,6 +56,7 @@ module Bundler
       #
       # @return [String]
       def repo_name
+        return nil unless @url
         @repo_name ||= Octokit::Repository.from_url(@url).to_s.chomp('.git')
       end
 
@@ -66,12 +66,17 @@ module Bundler
       #
       # @return [ChangelogFetcher]
       def load_changelog
-        return self unless filename
-        @content = Base64.decode64(Octokit.contents(repo_name, path: filename).content)
+        unless filename && repo_name
+          @content = nil
+          return self
+        end
+
+        @content = Base64.decode64(Octokit&.contents(repo_name, path: filename).content)
         self
       end
 
       def resolve_filename
+        return unless repo_name
         Octokit.contents(repo_name, path: '/')
           .map(&:to_h)
           .detect { |node| node[:type] == 'file' && node[:name].match(CHANGELOG_NAME_REGEXP)}

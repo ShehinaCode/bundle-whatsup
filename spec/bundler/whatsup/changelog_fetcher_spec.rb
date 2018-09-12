@@ -43,10 +43,7 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
 
     context "when both 'homepage_uri' and 'source_code_uri' is not presented" do
       let(:gem_info) { {'source_code_uri' => nil, 'homepage_uri' => nil} }
-
-      it 'raises NameError' do
-        expect { described_class.new(gem_info.repo_name) }.to raise_error(NameError)
-      end
+      it { is_expected.to eq(nil) }
     end
 
     context "when uri contains a dots ('octokit/octokit.rb')" do
