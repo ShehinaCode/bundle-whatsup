@@ -4,10 +4,7 @@ require 'vcr'
 
 describe Bundler::Whatsup::ChangelogFetcher, :vcr do
 
-  let(:sample_url)  { 'https://github.com/stympy/faker' }
-
-  let(:trailblazer_gem_info) { {'source_code_uri' => 'https://github.com/trailblazer/trailblazer', 'homepage_uri' => nil} }
-  let(:trailblazer_fetcher)  { described_class.new(trailblazer_gem_info) }
+  let(:sample_url) { 'https://github.com/stympy/faker' }
 
   describe '.load' do
 
@@ -105,7 +102,8 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     context 'when changelog filename differs from CHANGELOG.md' do
 
       describe 'CHANGES.md' do
-        subject { trailblazer_fetcher.filename }
+        let(:trailblazer_url) { 'https://github.com/trailblazer/trailblazer' }
+        subject { described_class.new('source_code_uri' => trailblazer_url, 'homepage_uri' => nil).filename }
         it { is_expected.to eq('CHANGES.md') }
       end
 
