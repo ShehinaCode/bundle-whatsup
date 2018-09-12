@@ -18,7 +18,7 @@ module Bundler
       GITHUB_REPO_REGEXP = %r{(https|http)://github.com/(?<gem_repo_name>[\S]+/[\S]+)}
 
       def initialize(gem_info)
-        @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first or nil
+        @url = gem_info.values_at('source_code_uri', 'homepage_uri').compact.grep(GITHUB_REPO_REGEXP).first
         load_changelog
       end
 
