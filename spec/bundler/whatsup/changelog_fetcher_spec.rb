@@ -23,7 +23,6 @@ describe Bundler::Whatsup::ChangelogFetcher, :vcr do
     context 'when gem with given name exists' do
       let(:gem_name) { 'faker' }
       it { is_expected.to be_an_instance_of Bundler::Whatsup::ChangelogFetcher }
-      it { is_expected.not_to be_nil }
     end
   end
 
