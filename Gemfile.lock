@@ -42,6 +42,9 @@ GEM
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    fuubar (2.3.2)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     gems (1.1.1)
       json
     gherkin (5.1.0)
@@ -67,6 +70,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    ruby-progressbar (1.9.0)
     safe_yaml (1.0.4)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
@@ -86,6 +90,7 @@ DEPENDENCIES
   bundler (~> 1.16)
   bundler-whatsup!
   cucumber
+  fuubar
   gems
   json
   octokit
