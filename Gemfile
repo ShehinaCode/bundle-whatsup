@@ -8,6 +8,7 @@ group :development do
 end
 
 group :test do
+  gem 'fuubar'
   gem 'vcr'
   gem 'webmock'
 end
