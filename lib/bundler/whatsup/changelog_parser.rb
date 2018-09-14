@@ -30,7 +30,7 @@ module Bundler
         return if @content.empty?
 
         # remove empty line and split to array by newline symbol
-        lines = @content.split("\r\n").reject(&:empty?)
+        lines = @content.split("\n").reject(&:empty?)
         current_version = nil
 
         lines.map do |line|
