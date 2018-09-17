@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'bundler/whatsup/gemfile.rb'
+require 'bundler/whatsup/gemfile_fetcher'
 
-describe Bundler::Whatsup::Gemfile do
+describe Bundler::Whatsup::GemfileFetcher do
 
-  let(:gemfile) { Bundler::Whatsup::Gemfile.new }
+  let(:gemfile) { Bundler::Whatsup::GemfileFetcher.new }
   let(:version_regexp) { /(\d{1,3}.\d{1,3}(.\d{1,3})?)/ }
 
   describe '#gems_versions' do

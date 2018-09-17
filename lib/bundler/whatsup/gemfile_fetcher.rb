@@ -3,7 +3,7 @@ require 'bundler'
 module Bundler
   module Whatsup
     # Works with dependencies and specs described in Gemfile
-    class Gemfile
+    class GemfileFetcher
       attr_reader :specs, :dependencies
 
       def initialize
