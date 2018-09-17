@@ -13,17 +13,17 @@ describe Bundler::Whatsup::ChangelogParser do
 
     context 'for faker' do
       let(:content) { File.read("#{RSPEC_ROOT}/fixtures/changelog_parser/faker-CHANGELOG.txt") }
-      include_examples 'a'
+      include_examples 'ChangelogParser#run'
     end
 
     context 'for rack' do
       let(:content) { File.read("#{RSPEC_ROOT}/fixtures/changelog_parser/rack-CHANGELOG.txt") }
-      include_examples 'a'
+      include_examples 'ChangelogParser#run'
     end
 
     context 'for thor' do
       let(:content) { File.read("#{RSPEC_ROOT}/fixtures/changelog_parser/thor-CHANGELOG.txt") }
-      include_examples 'a'
+      include_examples 'ChangelogParser#run'
     end
   end
 end
