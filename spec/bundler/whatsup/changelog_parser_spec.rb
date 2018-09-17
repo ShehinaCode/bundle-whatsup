@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'bundler/whatsup/changelog_parser.rb'
+require 'bundler/whatsup/changelog_parser'
 
 describe Bundler::Whatsup::ChangelogParser do
   describe '#run' do

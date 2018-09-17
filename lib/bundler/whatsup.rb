@@ -1,6 +1,6 @@
 require 'bundler/whatsup/version'
 require 'bundler'
-require 'bundler/whatsup/gemfile'
+require 'bundler/whatsup/gemfile_fetcher'
 
 module Bundler
   module Whatsup
@@ -9,8 +9,8 @@ module Bundler
 
       def exec(command, args)
         puts "You have next gems versions installed:\n"
-        gemfile = Bundler::Whatsup::Gemfile.new
-        p gemfile.dependencies_versions
+        gemfile_fetcher = Bundler::Whatsup::GemfileFetcher.load
+        p gemfile_fetcher.specs.versions
       end
     end
   end
