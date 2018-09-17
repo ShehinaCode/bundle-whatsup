@@ -4,7 +4,7 @@ module Bundler
   module Whatsup
     # Works with dependencies and specs described in Gemfile
     class Gemfile
-      attr_accessor :specs, :dependencies
+      attr_reader :specs, :dependencies
 
       def initialize
         @specs = Bundler.load.specs.sort_by(&:name)
