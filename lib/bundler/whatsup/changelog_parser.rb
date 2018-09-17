@@ -3,7 +3,7 @@ module Bundler
 
     # Parses content of changelog file by versions
     class ChangelogParser
-      attr_accessor :parsed
+      attr_reader :parsed
 
       VERSION_REGEXP = /
           ((.+)?[#]+(.+)?)                          # requires that line to be a title
