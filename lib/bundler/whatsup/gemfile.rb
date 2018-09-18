@@ -7,8 +7,17 @@ module Bundler
       attr_accessor :specs, :dependencies
 
       def initialize
-        @specs = Bundler.load.specs.sort_by(&:name)
-        @dependencies = Bundler.load.dependencies.sort_by(&:name)
+        b = Bundler.load
+        @specs = b.specs.sort_by(&:name)
+        @dependencies = b.dependencies.sort_by(&:name)
+      end
+
+      # Returns current version of given gem if it is installed, or nil
+      #
+      # @param gem [String] name of gem
+      # @return [String|nil] version of gem
+      def version_of(gem)
+        specs_versions[gem.to_sym]
       end
 
       # Returns Hash: spec_name=>version
