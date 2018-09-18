@@ -7,8 +7,9 @@ module Bundler
       attr_accessor :specs, :dependencies
 
       def initialize
-        @specs = Bundler.load.specs.sort_by(&:name)
-        @dependencies = Bundler.load.dependencies.sort_by(&:name)
+        b = Bundler.load
+        @specs = b.load.specs.sort_by(&:name)
+        @dependencies = b.load.dependencies.sort_by(&:name)
       end
 
       # Returns Hash: spec_name=>version
