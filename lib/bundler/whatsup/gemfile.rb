@@ -12,6 +12,14 @@ module Bundler
         @dependencies = b.load.dependencies.sort_by(&:name)
       end
 
+      # Returns current version of given gem if it is installed, or nil
+      #
+      # @param gem [String] name of gem
+      # @return [String|nil] version of gem
+      def get_version(gem)
+        specs_versions[gem]
+      end
+
       # Returns Hash: spec_name=>version
       #
       # @return [Hash]
