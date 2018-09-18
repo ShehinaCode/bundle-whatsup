@@ -16,7 +16,7 @@ module Bundler
       #
       # @param gem [String] name of gem
       # @return [String|nil] version of gem
-      def get_version(gem)
+      def version_of(gem)
         specs_versions[gem.to_sym]
       end
 
