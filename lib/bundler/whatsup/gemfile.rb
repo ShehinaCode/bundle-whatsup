@@ -8,8 +8,8 @@ module Bundler
 
       def initialize
         b = Bundler.load
-        @specs = b.load.specs.sort_by(&:name)
-        @dependencies = b.load.dependencies.sort_by(&:name)
+        @specs = b.specs.sort_by(&:name)
+        @dependencies = b.dependencies.sort_by(&:name)
       end
 
       # Returns current version of given gem if it is installed, or nil
@@ -17,7 +17,7 @@ module Bundler
       # @param gem [String] name of gem
       # @return [String|nil] version of gem
       def get_version(gem)
-        specs_versions[gem]
+        specs_versions[gem.to_sym]
       end
 
       # Returns Hash: spec_name=>version
