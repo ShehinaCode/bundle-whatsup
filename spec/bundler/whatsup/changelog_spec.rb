@@ -20,13 +20,13 @@ describe Bundler::Whatsup::Changelog do
   end
 
   describe '#versions' do
-    subject(:versions) { changelog.versions }
+    subject { changelog.versions }
 
     it { is_expected.to be_an(Array).and all be_an_instance_of Bundler::Whatsup::Version }
   end
 
-  describe '#changes_for_version' do
-    subject { changelog.changes_for_version('1.0') }
+  describe '#changes_for' do
+    subject { changelog.changes_for('1.0') }
 
     it { is_expected.to be_an_instance_of Bundler::Whatsup::Version }
   end
