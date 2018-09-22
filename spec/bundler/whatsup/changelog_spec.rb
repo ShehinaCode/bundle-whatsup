@@ -30,4 +30,11 @@ describe Bundler::Whatsup::Changelog do
 
     it { is_expected.to be_an_instance_of Bundler::Whatsup::GemVersion }
   end
+
+  describe '#changes_after' do
+    subject { changelog.changes_after(changelog.versions.first.to_s) }
+
+    it { is_expected.to be_an_instance_of Bundler::Whatsup::Changes }
+  end
+
 end
