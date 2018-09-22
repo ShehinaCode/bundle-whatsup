@@ -22,12 +22,12 @@ describe Bundler::Whatsup::Changelog do
   describe '#versions' do
     subject { changelog.versions }
 
-    it { is_expected.to be_an(Array).and all be_an_instance_of Bundler::Whatsup::Version }
+    it { is_expected.to be_an(Array).and all be_an_instance_of Bundler::Whatsup::GemVersion }
   end
 
   describe '#changes_for' do
     subject { changelog.changes_for('1.0') }
 
-    it { is_expected.to be_an_instance_of Bundler::Whatsup::Version }
+    it { is_expected.to be_an_instance_of Bundler::Whatsup::GemVersion }
   end
 end
